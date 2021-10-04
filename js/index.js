@@ -8,4 +8,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const message = document.querySelector('.message')
     new MessageController(message)
 
+    const loading = document.querySelector('.loading')
+
 })

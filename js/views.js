@@ -53,7 +53,7 @@ export function errorView(error){
     `
 }
 
-export function messageView(error){
+export function successView(error){
   return `
   <div>
   ${sucesss}
@@ -61,3 +61,10 @@ export function messageView(error){
   </div>
   `
 }
+
+export function loaderView(){
+return `
+<span class="bulma-loader-mixin"></span>
+`
+}
+

@@ -1,4 +1,4 @@
-import { itemView } from '../views.js';
+import { itemView} from '../views.js';
 import DataService from '../services/DataService.js';
 import PubSub from '../services/PubSub.js'
 
