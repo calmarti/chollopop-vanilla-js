@@ -5,10 +5,7 @@ export default {
         const response = await fetch(url)
         if (response.ok) {
             const data = await response.json()
-            console.log(data)
-            if (data.length === 0) {
-                throw new Error('Lo siento, no existe ningún anuncio por ahora')
-            }
+            //console.log(data)
             return data
         }
         else {

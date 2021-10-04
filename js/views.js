@@ -68,4 +68,6 @@ return `
 `
 }
 
-//NO PINTA EL ELEMENTO SPAN
+export function emptyView(){
+  
+}
