@@ -47,7 +47,7 @@ return `
 export function errorView(error){
     return `
     <div>
-    Hubo un error: ${error}
+    Error: ${error}
     <button>Cerrar</button>
     </div>
     `
@@ -64,7 +64,8 @@ export function successView(error){
 
 export function loaderView(){
 return `
-<span class="bulma-loader-mixin"></span>
+<span class="loader"></span>
 `
 }
 
+//NO PINTA EL ELEMENTO SPAN

@@ -10,7 +10,7 @@ export default class ListOfItemsController {
      }
 
     async renderListOfItems() { 
-
+        PubSub.publish(PubSub.events.SHOW_LOADER)
         try {
             const items = await DataService.getListOfItems()    
             let htmlContent = '' 
@@ -18,11 +18,16 @@ export default class ListOfItemsController {
                 htmlContent += itemView(item); 
             }   
             this.element.innerHTML = htmlContent
+           
 
         } catch (error) {
-            PubSub.publish(PubSub.events.SHOW_ERROR, error)
-            
+            PubSub.publish(PubSub.events.SHOW_ERROR, error.message)
+
+        } finally{
+            PubSub.publish(PubSub.events.HIDE_LOADER)
         }
     }
-               
 }
+               
+            
+    

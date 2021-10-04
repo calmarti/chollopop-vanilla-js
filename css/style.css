@@ -1,1 +1,20 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
+
+.loader {
+    width: 50px;
+    height: 51px;
+    border: 6px solid;
+    border-top-color: hsl(154,100%,31%);
+    border-left-color: hsl(216,87%,52%);
+    border-bottom-color: hsl(8,66%,50%);
+    border-right-color: hsl(42,100%,51%);
+    border-radius: 50%;
+    transform: rotate(45deg);
+    margin: 10px 10px;
+  }
+  
+  
+@keyframes loading {
+      0% { transform: translate(-9px, -25px) rotate(0deg); }
+    100% { transform: translate(-9px, -25px) rotate(360deg); }
+  }

@@ -1,13 +1,18 @@
 import ListOfItemsController from "./controllers/ListOfItemsController.js"
 import MessageController from "./controllers/MessageController.js"
+import LoaderController from "./controllers/LoaderController.js"
 
 window.addEventListener('DOMContentLoaded', () => {
-    const list = document.querySelector('.list')
-    new ListOfItemsController(list)
+    
+    
+    const loaderDiv = document.querySelector('.loader-container')
+    new LoaderController(loaderDiv)
+    
+    const messageDiv = document.querySelector('.message-container')
+    new MessageController(messageDiv)
 
-    const message = document.querySelector('.message')
-    new MessageController(message)
+    const listDiv = document.querySelector('.list-container')
+    new ListOfItemsController(listDiv)
 
-    const loading = document.querySelector('.loading')
 
 })
