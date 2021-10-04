@@ -1,6 +1,7 @@
+
 export function itemView(item){
 return `
-<div class="card column">
+<div class="card column is-3">
 
 <header class="card-header">
   <p class="card-header-title">
@@ -24,8 +25,9 @@ return `
 <div class="card">
   <div class="card-content">
     <div class="content">
-        ${item.name}
-      Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum.
+        <strong>${item.name}</strong>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${item.price}€
+        
     </div>
   </div>
 </div>
@@ -42,4 +44,20 @@ return `
 
 }
 
+export function errorView(error){
+    return `
+    <div>
+    Hubo un error: ${error}
+    <button>Cerrar</button>
+    </div>
+    `
+}
 
+export function messageView(error){
+  return `
+  <div>
+  ${sucesss}
+  <button>Cerrar</button>
+  </div>
+  `
+}

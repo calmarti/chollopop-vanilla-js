@@ -1,9 +1,8 @@
 export default {
 
     getListOfItems: async function () {
-        const url = 'http://127.0.0.1:8000/api/items'
+        const url = 'https://pixnio.com/free-images/2017/09/07/2017-09-07-07-59-31.jpg'
         const response = await fetch(url)
-        console.log(response)
         if (response.ok) {
             const data = await response.json()
             return data
@@ -13,3 +12,6 @@ export default {
         }
     }
 }
+
+//http://127.0.0.1:8000/api/items
+//https://pixnio.com/free-images/2017/09/07/2017-09-07-07-59-31.jpg

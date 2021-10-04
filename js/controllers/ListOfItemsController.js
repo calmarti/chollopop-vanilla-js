@@ -1,5 +1,6 @@
 import { itemView } from '../views.js';
 import DataService from '../services/DataService.js';
+import PubSub from '../services/PubSub.js'
 
 export default class ListOfItemsController {
 
@@ -19,7 +20,8 @@ export default class ListOfItemsController {
             this.element.innerHTML = htmlContent
 
         } catch (error) {
-            throw error
+            PubSub.publish(PubSub.events.SHOW_ERROR, error)
+            
         }
     }
                
