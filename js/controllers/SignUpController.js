@@ -8,8 +8,8 @@ export default class SignUpController {
     constructor(element) {
         this.element = element
         this.attachEventListeners()
+        this.whileTypePasswordsMatch()
         this.whileTypeValidation()
-
     }
 
 
@@ -18,16 +18,48 @@ export default class SignUpController {
         const button = this.element.querySelector('button')
         Array.from(inputList).forEach(input => {
             input.addEventListener('input', event => {
+
                 if (this.element.checkValidity()) {
-               
+
                     button.removeAttribute('disabled')
                 }
-                else{
+                else {
                     button.setAttribute('disabled', true)
                 }
             })
         })
     }
+
+
+    whileTypePasswordsMatch() {
+        const passwordControls = this.element.querySelectorAll('input[type="password"]')
+            passwordControls.forEach(control => {
+            control.addEventListener('input', control => {
+                let passwords = []
+                console.log(passwords)
+                for (control of passwordControls) {
+                    
+                    if (!passwords.includes(control.value)) {
+                        passwords.push(control.value)
+                    }
+                    if (passwords.length === 1) {
+                        passwordControls.forEach(control => {
+                            control.setCustomValidity('')
+                        })
+                    }
+                    else {
+                        passwordControls.forEach(control => {
+                            control.setCustomValidity('Las contraseñas no coinciden')
+                        })
+                    }
+                }
+            })
+        })
+    }
+
+
+
+
 
 
 
@@ -68,24 +100,24 @@ export default class SignUpController {
                         message += `${control.name}: ${control.validationMessage}\n`    //¿porque ignora el newline?
                     }
                 })
-            
+
                 PubSub.publish(PubSub.events.SHOW_ERROR, message)
             }
 
-           //proteccion contra HTML injection?
+            //proteccion contra HTML injection?
         })
-        
+
     }
-        //habilitación o no del botón mientras el usuario teclea (antes del evento 'submit')
-     
-}       
+    //habilitación o no del botón mientras el usuario teclea (antes del evento 'submit')
+
+}
         //TODO: validar confirmacion de contraseña en tiempo real
 
 
 
-  
 
-    
+
+
 
 
 
