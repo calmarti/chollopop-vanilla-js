@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    
-    <title>Chollopop</title>
+    <title>Regístrate</title>
 </head>
-
 <body>
-<!--TODO: revisar el menú en modo burguer (pantalla pequeña) pues no despliega nada-->
+    
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item" href="https://bulma.io">
@@ -46,7 +43,7 @@
                 <a class="button is-dark">
                   <strong>Inicia sesión</strong>
                 </a>
-                <a href="signup.html" class="button is-white">
+                <a class="button is-white">
                   Regístrate
                 </a>
               </div>
@@ -54,20 +51,46 @@
           </div>
         </div>
       </nav>
-    
-    <h1 class="title">Bienvenido a Chollopop</h1>
-    
-    <div class="loader-container"></div>
 
-    <div class="message-container"></div>
+      <div class="loader-container"></div>
 
-    <div class="section">
-        <div class="container">
-            <div class="list-container columns is-multiline"></div>
+      <div class="message-container"></div>
+
+
+<form class="container section" novalidate>
+
+    <div class="field">
+        <label class="label">Usuario</label>
+        <div class="control">
+          <input class="input is-medium is-rounded" type="text" name="username" placeholder="Crea tu nombre de usuario" required>
         </div>
-    </div>
-   
-    <script type="module" src="js/index.js"></script>
-</body>
+      </div>
 
+      <div class="field">
+        <label class="label">Contraseña</label>
+        <div class="control">
+          <input class="input is-medium is-rounded" type="password" name="password" placeholder="Crea tu contraseña" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Confirma tu contraseña</label>
+        <div class="control">
+          <input class="input is-medium is-rounded" type="password" name="password" placeholder="Escribe de nuevo tu contraseña" required>
+        </div>
+      </div>
+
+
+      <div class="field">
+        <div class="control">
+          <button class="button is-link is-medium is-rounded">Continuar</button>
+        </div>
+      </div>
+
+</form>
+
+
+<script type="module" src="signup.js"></script>
+
+</body>
 </html>
