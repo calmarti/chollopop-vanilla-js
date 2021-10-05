@@ -10,7 +10,7 @@ export default class MessageController{
             this.showError(error)
         })
         PubSub.subscribe(PubSub.events.SHOW_SUCCESS, success => {
-            this.showSuccess()
+            this.showSuccess(success)
         })
 
         PubSub.subscribe(PubSub.events.EMPTY_STATE, message => {
@@ -34,7 +34,7 @@ export default class MessageController{
         
      
     showSuccess(success){
-        this.element.innerHTML = successView(error)
+        this.element.innerHTML = successView(success)
         const button = this.element.querySelector('button')
         this.attachCloseButtonListener(button)
     }

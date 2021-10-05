@@ -11,8 +11,38 @@ export default {
         else {
             throw new Error('No se pudo obtener la lista de anuncios')
         }
+    },
+  
+    registerUser: async function (username, password) {
+        const params = {username, password}
+        console.log(params)
+        const url = 'http://127.0.0.1:8000/auth/register'
+        const config = {
+            method: 'POST',
+            headers: {'content-type': 'application/json'},
+            body: JSON.stringify({username, password})
+        }
+        console.log(config)
+        const response = await fetch(url, config)
+        
+        if (response.ok) {
+            try{
+                const parsedResponse = await response.json()   //probar error al parsear a ver que message da
+                return parsedResponse
+            }
+            catch(error){
+                throw error.message
+            }
+        }
+        else {
+            console.log(response)
+            throw 'No se pudo registrar el usuario'
+        }
     }
+
+
 }
+
 
 
 //http://127.0.0.1:8000/api/items

@@ -53,10 +53,10 @@ export function errorView(error){
     `
 }
 
-export function successView(error){
+export function successView(success){
   return `
   <div>
-  ${sucesss}
+  ${success}
   <button>Cerrar</button>
   </div>
   `
