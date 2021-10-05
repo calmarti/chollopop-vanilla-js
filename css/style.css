@@ -18,3 +18,7 @@
       0% { transform: translate(-9px, -25px) rotate(0deg); }
     100% { transform: translate(-9px, -25px) rotate(360deg); }
   }
+
+/*   input:invalid {
+    border: red solid 3px;
+  } */
