@@ -36,12 +36,18 @@ export default class SignUpController {
                 }
             }
             else {
-                console.log('no valida')
+                console.log('THIS.ELEMENT', this.element)
+                console.log('THIS.ELEMENT.ELEMENTS', this.element.elements)
+                 let message = ``
+                 Array.from(this.element.elements).forEach(control => {
+                    if (control.validity.valid === false){
+                        message += `${control.name}: ${control.validationMessage}\n`    //¿porque ignora el newline?
+                    }
+                })
+                PubSub.publish(PubSub.events.SHOW_ERROR, message)
             }
-
-
-
-            //proteccion contra HTML injection?
+                 
+           //proteccion contra HTML injection?
 
         })
     }
