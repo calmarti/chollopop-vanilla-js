@@ -68,6 +68,11 @@ return `
 `
 }
 
-export function emptyView(){
-  
+export function emptyView(message){
+  //TODO: renderizar el estado vacío con clases de bulma
+return `
+<div>${message}
+<button>Cerrar</button>
+</div>
+`
 }

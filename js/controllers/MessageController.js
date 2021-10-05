@@ -13,8 +13,8 @@ export default class MessageController{
             this.showSuccess()
         })
 
-        PubSub.subscribe(PubSub.events.SHOW_SUCCESS, empty => {
-            this.showEmptyState()
+        PubSub.subscribe(PubSub.events.EMPTY_STATE, message => {
+            this.showEmptyState(message)
         })
 
     }
@@ -39,9 +39,10 @@ export default class MessageController{
         this.attachCloseButtonListener(button)
     }
         
-    showEmptyState(){
-        this.element.innerHTML = emptyView()
-        
+    showEmptyState(message){                //falta probarlo con items vacío en el db.JSON
+        this.element.innerHTML = emptyView(message)
+        const button = this.element.querySelector('button')
+        this.attachCloseButtonListener(button)
     }
 
 
