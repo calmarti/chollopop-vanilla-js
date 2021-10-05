@@ -8,8 +8,28 @@ export default class SignUpController {
     constructor(element) {
         this.element = element
         this.attachEventListeners()
+        this.whileTypeValidation()
 
     }
+
+
+    whileTypeValidation() {
+        const inputList = this.element.querySelectorAll('input')
+        const button = this.element.querySelector('button')
+        Array.from(inputList).forEach(input => {
+            input.addEventListener('input', event => {
+                if (this.element.checkValidity()) {
+               
+                    button.removeAttribute('disabled')
+                }
+                else{
+                    button.setAttribute('disabled', true)
+                }
+            })
+        })
+    }
+
+
 
     attachEventListeners() {
 
@@ -48,38 +68,25 @@ export default class SignUpController {
                         message += `${control.name}: ${control.validationMessage}\n`    //¿porque ignora el newline?
                     }
                 })
+            
                 PubSub.publish(PubSub.events.SHOW_ERROR, message)
             }
 
-            //proteccion contra HTML injection?
-
+           //proteccion contra HTML injection?
         })
-
+        
+    }
         //habilitación o no del botón mientras el usuario teclea (antes del evento 'submit')
-        const inputList = this.element.querySelectorAll('input')
-        const button = this.element.querySelector('button')
-        
-
-        Array.from(inputList).forEach(input => {
-            input.addEventListener('input', event => {
-                if (this.element.checkValidity()) {
-               
-                    button.removeAttribute('disabled')
-                }
-                else{
-                    button.setAttribute('disabled', true)
-                }
-            })
-        })
-        
+     
+}       
         //TODO: validar confirmacion de contraseña en tiempo real
 
 
 
   
 
-    }
-}
+    
+
 
 
 
