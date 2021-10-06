@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Nuevo anuncio</title>
+</head>
+
+<body>
+    <h1 class="title">Crea un nuevo anuncio</h1>
+
+    <div class="message-container"></div>
+
+    <form class="container section" novalidate>
+
+        <div class="field">
+            <label class="label">Nombre del producto</label>
+            <div class="control">
+                <input class="input is-medium is-rounded" type="text" name="itemname" placeholder="Escribe el nombre del producto"
+                    required autofocus>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Precio</label>
+            <div class="control">
+                <input class="input is-medium is-rounded" type="text" name="price" placeholder="Precio en euros" required autofocus>
+            </div>
+        </div>
+
+        <div class="select">
+            <select>
+                <option>¿Compras o vendes?</option>
+                <option value="sale">Vendo</option>
+                <option value="buy">Compro</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label class="label">Foto</label>
+            <div class="control">
+                <input class="input is-small" type="text" name="itemname" placeholder="URL a la foto del producto" required autofocus>
+            </div>
+        </div>
+
+    </form>
+
+
+    <script type="module" src="js/createItem.js"></script>
+</body>
+
+</html>

@@ -1,4 +1,3 @@
-//import { } from '../views.js'
 import DataService from '../services/DataService.js'
 import PubSub from '../services/PubSub.js'
 
@@ -14,6 +13,7 @@ export default class LoginController {
             event.preventDefault()
 
             if (this.element.checkValidity()){             
+                //¿protección contra HTML injection?
                 const username= this.element.querySelector('input[type="text"]').value   //potencial cambio a 'email' 
                 const password = this.element.querySelector('input[type="password"]').value
                 try{
