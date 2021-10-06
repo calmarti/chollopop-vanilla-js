@@ -27,13 +27,13 @@
         <div class="field">
             <label class="label">Precio</label>
             <div class="control">
-                <input class="input is-medium is-rounded" type="text" name="price" placeholder="Precio en euros" required autofocus>
+                <input class="input is-medium is-rounded" type="text" name="price" placeholder="Precio en euros" required>
             </div>
         </div>
 
         <div class="select">
-            <select>
-                <option>¿Compras o vendes?</option>
+            <select name="buy-sale" required>
+                <option value="">¿Compras o vendes?</option>
                 <option value="sale">Vendo</option>
                 <option value="buy">Compro</option>
             </select>
@@ -42,14 +42,20 @@
         <div class="field">
             <label class="label">Foto</label>
             <div class="control">
-                <input class="input is-small" type="text" name="itemname" placeholder="URL a la foto del producto" required autofocus>
+                <input class="input is-small" type="text" name="picture" placeholder="URL a la foto del producto">
             </div>
         </div>
+
+        <div class="field">
+            <div class="control">
+              <button  class="button is-link is-medium is-rounded" type="submit">Crear anuncio</button>
+            </div>
+          </div>
 
     </form>
 
 
-    <script type="module" src="js/createItem.js"></script>
+    <script type="module" src="js/newItem.js"></script>
 </body>
 
 </html>

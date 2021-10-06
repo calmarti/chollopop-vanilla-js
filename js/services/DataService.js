@@ -52,10 +52,17 @@ export default {
 
     },
 
-    isAuthed: async () => {
+    isAuth: async function() {
         return localStorage.getItem('AUTH_TOKEN') !== null
-    }
+    },
         
+    postNewItem: async function(itemData) {
+        if (this.isAuth()){
+            const url = 'http://127.0.0.1:8000/api/items'
+            await this.request(url, 'POST', {itemData})
+        }
+    } 
+
 }
 //http://127.0.0.1:8000/api/items
 //https://pixnio.com/free-images/2017/09/07/2017-09-07-07-59-31.jpg
