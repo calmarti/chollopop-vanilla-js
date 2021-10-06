@@ -2,10 +2,14 @@ import DataService from "../services/DataService.js"
 import PubSub from "../services/PubSub.js"
 
 export default class SignUpController {
-
-    //TODO: publicar eventos de error, éxito y carga
+    
+    //TODO¿proteccion contra HTML injection?
+    //TODO: arreglar evento de carga (en .html) y el css de eventos de error y éxito
+    //OJO: tal vez el loader debe ir sólo al enviar el formulario al backend
+    //TODO: arreglar posible conflicto entre validación de igualdad de contraseñas y el minlength (¿usar setCustomValidity?)
 
     constructor(element) {
+        
         this.element = element
         this.attachEventListeners()
         this.whileTypePasswordsMatch()
@@ -20,7 +24,7 @@ export default class SignUpController {
             input.addEventListener('input', event => {
 
                 if (this.element.checkValidity()) {
-
+                    
                     button.removeAttribute('disabled')
                 }
                 else {
@@ -36,7 +40,7 @@ export default class SignUpController {
             passwordControls.forEach(control => {
             control.addEventListener('input', control => {
                 let passwords = []
-                console.log(passwords)
+                
                 for (control of passwordControls) {
                     
                     if (!passwords.includes(control.value)) {
@@ -50,18 +54,13 @@ export default class SignUpController {
                     else {
                         passwordControls.forEach(control => {
                             control.setCustomValidity('Las contraseñas no coinciden')
+                            //en un campo texto justo de bajo del control podría ir: control.validationMessage
                         })
                     }
                 }
             })
         })
     }
-
-
-
-
-
-
 
     attachEventListeners() {
 
@@ -72,10 +71,9 @@ export default class SignUpController {
             //hacer todas las validaciones necesarias
             if (this.element.checkValidity()) {
                 try {
-                    const usernameElem = this.element.querySelector('input[name="username"]')
-                    const username = usernameElem.value
-                    const passwordElem = this.element.querySelector('input[name="password"]')
-                    const password = passwordElem.value
+                    const username = this.element.querySelector('input[name="username"]').value
+                    const password = this.element.querySelector('input[name="password"]').value
+                    
 
                     /*  const controls = new FormData(this.element)
                      const username = controls.get('username')
@@ -83,7 +81,7 @@ export default class SignUpController {
 
 
                     const result = await DataService.registerUser(username, password)
-                    console.log(result)
+                   
                     PubSub.publish(PubSub.events.SHOW_SUCCESS, 'Registrado con éxito')
 
                 }
@@ -92,8 +90,8 @@ export default class SignUpController {
                 }
             }
             else {
-                console.log('THIS.ELEMENT', this.element)
-                console.log('THIS.ELEMENT.ELEMENTS', this.element.elements)
+                //console.log('THIS.ELEMENT', this.element)
+                //console.log('THIS.ELEMENT.ELEMENTS', this.element.elements)
                 let message = ``
                 Array.from(this.element.elements).forEach(control => {
                     if (control.validity.valid === false) {
@@ -104,14 +102,13 @@ export default class SignUpController {
                 PubSub.publish(PubSub.events.SHOW_ERROR, message)
             }
 
-            //proteccion contra HTML injection?
         })
 
     }
-    //habilitación o no del botón mientras el usuario teclea (antes del evento 'submit')
+
 
 }
-        //TODO: validar confirmacion de contraseña en tiempo real
+      
 
 
 

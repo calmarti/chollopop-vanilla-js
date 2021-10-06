@@ -1,0 +1,38 @@
+//import { } from '../views.js'
+import DataService from '../services/DataService.js'
+import PubSub from '../services/PubSub.js'
+
+export default class LoginController {
+
+    constructor(element) {
+        this.element = element
+        this.attachEventListeners()
+
+    }
+    attachEventListeners() {
+        this.element.addEventListener('submit', async event => {
+            event.preventDefault()
+
+            if (this.element.checkValidity()){             
+                const username= this.element.querySelector('input[type="text"]').value   //potencial cambio a 'email' 
+                const password = this.element.querySelector('input[type="password"]').value
+                try{
+                    const result = await DataService.loginUser(username,password)
+                    window.location.href='/'
+                    
+                }catch(error){
+                    PubSub.publish(PubSub.events.SHOW_ERROR, error)
+                }
+
+            }else{
+                PubSub.publish(PubSub.events.SHOW_ERROR, 'Los campos no pueden estar vacíos')
+            }
+       
+
+
+        })
+
+    }
+
+
+}
