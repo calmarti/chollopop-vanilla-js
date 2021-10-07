@@ -1,48 +1,21 @@
 
 export function itemView(item){
 return `
-<div class="card column is-3">
-
-<header class="card-header">
-  <p class="card-header-title">
-    Card header
-  </p>
-  <button class="card-header-icon" aria-label="more options">
-    <span class="icon">
-      <i class="fas fa-angle-down" aria-hidden="true"></i>
-    </span>
-  </button>
-</header>
-
-<div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="http://lorempixel.com/400/200" alt="Placeholder image">
-    </figure>
+<div class="card col-3" style="">
+<a style="" href="detail.html"
+  <img src="http://lorempixel.com/400/200" class="card-img-top" alt="${item.name}">
+  <div class="card-body">
+    <h5 class="card-title">
+    <strong>${item.name}</strong></h5>
+    <p class="card-text">${item.price}€</p>
+    <a href="detail.html" class="btn btn-primary"> ${item.buysale}</a>
   </div>
 </div>
-
-<div class="card">
-  <div class="card-content">
-    <div class="content">
-        <strong>${item.name}</strong>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${item.price}€
-        
-    </div>
-  </div>
-</div>
-
-<div class="card">
-  <footer class="card-footer">
-    <a href="#" class="card-footer-item">Save</a>
-    <a href="#" class="card-footer-item">Edit</a>
-    <a href="#" class="card-footer-item">Delete</a>
-  </footer>
-</div>
-
-</div>`
+</a>
+`
 
 }
+
 
 export function errorView(error){
     return `
@@ -75,4 +48,21 @@ return `
 <button>Cerrar</button>
 </div>
 `
+}
+
+
+
+export function detailItemView(){
+return `
+  <div class="card col-3" style="">
+<a style="" href="detail.html"
+  <img src="http://lorempixel.com/400/200" class="card-img-top" alt="${item.name}">
+  <div class="card-body">
+    <h5 class="card-title">
+    <strong>${item.name}</strong></h5>
+    <p class="card-text">${item.price}€</p>
+    <a href="detail.html" class="btn btn-primary"> ${item.buysale}</a>
+  </div>
+</div>
+</a>`
 }
