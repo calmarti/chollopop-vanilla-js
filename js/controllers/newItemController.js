@@ -17,15 +17,17 @@ export default class newItemController {
 
             if (this.element.checkValidity()) {
                 try {
-                    const itemData = {}
-                    const data = new FormData(this.element)
-                    for (const key of data.keys()) {
-                        itemData[key] = data.get(key)
-                    }
-                    console.log(itemData)
-
-                    const result = await DataService.postNewItem(itemData)
                     
+                    const data = new FormData(this.element)
+                    
+                       const name = data.get('itemname')
+                       const price = data.get('price')
+                       const buysale = data.get('buy-sale')
+                       const picture = data.get('picture')
+                    
+                    //console.log(itemData)
+                    const result = await DataService.postNewItem(name, price, buysale, picture)   //probar a eliminar el 'result' dejando solo la ejecución del await
+                    PubSub.publish(PubSub.events.SHOW_SUCCESS, 'Tu anuncio ha sido creado')
                 }
                 catch (error) {
                     PubSub.publish(PubSub.events.SHOW_ERROR, error)

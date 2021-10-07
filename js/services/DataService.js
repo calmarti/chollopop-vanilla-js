@@ -19,6 +19,12 @@ export default {
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(body)
         }
+        
+        if (this.isAuth()){
+            const token = localStorage.getItem('AUTH_TOKEN')
+            config.headers['Authorization'] = `Bearer ${token}`
+        }
+
         const response = await fetch(url, config)
         try {
             const parsedResponse = await response.json()   //probar error al parsear a ver que message da
@@ -52,15 +58,13 @@ export default {
 
     },
 
-    isAuth: async function() {
+    isAuth: function() {
         return localStorage.getItem('AUTH_TOKEN') !== null
     },
         
-    postNewItem: async function(itemData) {
-        if (this.isAuth()){
+    postNewItem: async function(name, price, buysale, picture) {
             const url = 'http://127.0.0.1:8000/api/items'
-            await this.request(url, 'POST', {itemData})
-        }
+            return await this.request(url, 'POST', {name, price, buysale, picture})
     } 
 
 }
