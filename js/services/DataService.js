@@ -65,7 +65,11 @@ export default {
     postNewItem: async function(name, price, buysale, picture) {
             const url = 'http://127.0.0.1:8000/api/items'
             return await this.request(url, 'POST', {name, price, buysale, picture})
-    } 
+    }, 
+
+    getItemDetail: async function(itemId){
+
+    }
 
 }
 //http://127.0.0.1:8000/api/items
