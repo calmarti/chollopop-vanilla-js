@@ -1,7 +1,7 @@
 export default {
 
     getListOfItems: async function () {
-        const url = 'http://127.0.0.1:8000/api/items'
+        const url = 'http://127.0.0.1:8000/api/items?' 
         const response = await fetch(url)
         if (response.ok) {
             const data = await response.json()
@@ -23,8 +23,10 @@ export default {
         }
         
         if (this.isAuth()){
+            
             const token = localStorage.getItem('AUTH_TOKEN')
             config.headers['Authorization'] = `Bearer ${token}`
+            
         }
 
         const response = await fetch(url, config)
@@ -69,12 +71,39 @@ export default {
             return await this.request(url, 'POST', {name, price, buysale, picture})
     }, 
 
-    getItemDetail: async function(itemId){
-        const url = `http://127.0.0.1:8000/api/items/${itemId}`
-        return await this.request(url, 'GET')
-         
+    getItemDetail: async function(itemId){                    
+        const url = `http://127.0.0.1:8000/api/items/${itemId}`    
+        return await this.request(url, 'GET')       
+    },
 
-    }   
+    deleteItem: async function(itemId){
+        const url = `http://127.0.0.1:8000/api/items/${itemId}`
+        return await this.request(url, 'DELETE') 
+
+    },
+    parseToken: function(){
+        const token = localStorage.getItem('AUTH_TOKEN')
+        if (token === null){
+            return null
+        }
+        else{
+            try{
+                const payload = JSON.parse(atob(token.split('.')[1]))
+                //console.log(payload)
+                return payload.userId
+            }catch(error){
+                throw error
+            }
+        } 
+    },
+    addCanBeDeletedProperty: function(item){            //mover o refactorizar en función de creación de anuncio
+        if (this.parseToken() === item.userId){
+            item.canBeDeleted = true
+        }else{
+            item.canBeDeleted = false
+        }
+        //console.log(item.canBeDeleted)
+    } 
 
 }
 //http://127.0.0.1:8000/api/items

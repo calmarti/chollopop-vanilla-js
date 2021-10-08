@@ -14,7 +14,7 @@ export default class newItemController {
         this.element.addEventListener('submit', async event => {
             event.preventDefault()
 
-
+                //TODO: EVITAR QUE EL USUARIO CREE EL MISMO ANUNCIO VARIAS VECES
             if (this.element.checkValidity()) {
                 try {
                     

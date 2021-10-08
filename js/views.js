@@ -52,7 +52,18 @@ return `
 }
 
 export function itemDetailView(item){
-return `
+  if (item==={}){
+    return`
+    <strong>El anuncio que buscas no existe</strong>
+  `
+  }
+  let button = ''
+  if (item.canBeDeleted){
+      button = `<button>Borrar</button>`
+      }
+   
+ 
+  return `
   <div class="card col-3" style="">
   <img src="http://lorempixel.com/400/200" class="card-img-top" alt="${item.name}">
   <div class="card-body">
@@ -60,7 +71,8 @@ return `
     <strong>${item.name}</strong></h5>
     <p class="card-text">${item.price}€</p>
     <a href="detail.html" class="btn btn-primary"> ${item.buysale}</a>
+    ${button}  
   </div>
-</div>`
-
+  </div>
+`
 }

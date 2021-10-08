@@ -1,4 +1,4 @@
-import ItemDetailController from './controllers/ItemDetailContainer.js'
+import ItemDetailController from './controllers/ItemDetailController.js'
 import MessageController from './controllers/MessageController.js'
 
 
