@@ -2,21 +2,27 @@ import PubSub from "../services/PubSub.js"
 import DataService from "../services/DataService.js"
 import { itemDetailView } from "../views.js"
 
-export default class ItemDetailController{
+export default class ItemDetailController {
 
-    constructor(element, itemId){
+    constructor(element, itemId) {
         this.element = element
-       
-   
+        this.showItemDetail(itemId)
+
 
     }
-    //pedir al DataService los datos del item a través del id    
-    DataService.getItemDetail()
 
-    //pasarle los datos a la vista
-    showItemDetail(itemData){
-        return itemDetailView(itemData)
-    } 
+    async showItemDetail(itemId) {
+        try {
+            const item = await DataService.getItemDetail(itemId)
+            this.element.innerHTML = itemDetailView(item)
+        }
+        catch (error) {
+            PubSub.publish(PubSub.events.SHOW_ERROR, error)
+        }
+
+    }
 
 
-}
+} 
+
+

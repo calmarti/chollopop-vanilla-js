@@ -17,7 +17,9 @@ export default {
         const config = {
             method: method,
             headers: { 'content-type': 'application/json' },
-            body: JSON.stringify(body)
+        }
+        if (config.method === 'POST'){
+            config['body'] = JSON.stringify(body)
         }
         
         if (this.isAuth()){
@@ -68,8 +70,11 @@ export default {
     }, 
 
     getItemDetail: async function(itemId){
+        const url = `http://127.0.0.1:8000/api/items/${itemId}`
+        return await this.request(url, 'GET')
+         
 
-    }
+    }   
 
 }
 //http://127.0.0.1:8000/api/items
