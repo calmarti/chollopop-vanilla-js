@@ -4,14 +4,10 @@ import { loaderView } from "../views.js"
 
 export default class LoaderController {
     constructor(element) {
-
-        this.element = element
-               
+        this.element = element            
         PubSub.subscribe(PubSub.events.SHOW_LOADER, () => {
             this.showLoader()
-            
         })
-
         PubSub.subscribe(PubSub.events.HIDE_LOADER, () => {
             this.hideLoader()
         })
@@ -23,8 +19,7 @@ export default class LoaderController {
     }
 
      hideLoader(){
-        const span = this.element.querySelector('span')
-        span.removeAttribute('class') 
+        this.element.querySelector('.spinner-border').removeAttribute('class') 
         
     } 
 

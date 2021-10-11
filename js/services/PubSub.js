@@ -8,7 +8,8 @@ export default {
     SHOW_ERROR: 'SHOW_ERROR',
     SHOW_LOADER: 'SHOW_LOADER',
     HIDE_LOADER: 'HIDE_LOADER',
-    EMPTY_STATE: 'EMPTY_STATE'
+    SHOW_EMPTY: 'SHOW_EMPTY',
+    SEARCH: 'SEARCH'
   },
 
   subscribe: function (topic, listener) {

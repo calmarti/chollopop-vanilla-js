@@ -7,32 +7,50 @@ export default class ItemDetailController {
     constructor(element, itemId) {
         this.element = element
         this.showItemDetail(itemId)
-        console.log(itemId)
-
-
     }
-    //proteger del HTML injection
+
+
+    //TODO: publicar eventos de éxito al editar y al borrar y luego crear para botón redirigir ?
+    addEditFunctionality(itemId) {
+        const button = this.element.querySelector('.edit-button')
+        if (button) {
+            button.addEventListener('click', () => {
+                window.location.href = `/edititem.html?id=${itemId}`
+
+            })
+        }
+    }
+
+
+    addDeleteFunctionality(itemId) {
+        const button = this.element.querySelector('.delete-button')
+        if (button) {
+            button.addEventListener('click', async () => {
+                //TODO: mensaje de confirmación al usuario antes de borrar el anuncio, usar un modal de Bootstrap o algo así
+                await DataService.deleteItem(itemId)
+                window.location.href = '/?message=deleted-item'
+                button.setAttribute('disabled', 'disabled')
+            })
+        }
+    }
+
+
     async showItemDetail(itemId) {
+        PubSub.publish(PubSub.events.SHOW_LOADER)
         try {
             const item = await DataService.getItemDetail(itemId)
-            DataService.addCanBeDeletedProperty(item)
+            DataService.isItemCreator(item)
             this.element.innerHTML = itemDetailView(item)
-            const button = this.element.querySelector('button')
 
-            //TODO: refactorizar en función aparte
-            //TODO: mensaje de confirmación al usuario antes de borrar el anuncio
-
-            if (button) {
-                button.addEventListener('click', async () => {
-                    await DataService.deleteItem(itemId)
-                    window.location.href = '/?message=deleted-item'
-                    button.setAttribute('disabled', 'disabled')
-                })
-            }
+            this.addEditFunctionality(itemId) 
+            this.addDeleteFunctionality(itemId)
 
         }
         catch (error) {
             PubSub.publish(PubSub.events.SHOW_ERROR, error)
+        }
+        finally {
+            PubSub.publish(PubSub.events.HIDE_LOADER)
         }
 
     }

@@ -4,17 +4,16 @@ import {errorView, successView, emptyView} from '../views.js'
 export default class MessageController{
     constructor(element){
         this.element = element
-        
-        
+                
         PubSub.subscribe(PubSub.events.SHOW_ERROR, error => {
             this.showError(error)
         })
-        PubSub.subscribe(PubSub.events.SHOW_SUCCESS, success => {
-            this.showSuccess(success)
+        PubSub.subscribe(PubSub.events.SHOW_SUCCESS, message => {
+            this.showSuccess(message)
         })
 
-        PubSub.subscribe(PubSub.events.EMPTY_STATE, message => {
-            this.showEmptyState(message)
+        PubSub.subscribe(PubSub.events.SHOW_EMPTY, message => {
+            this.showEmpty(message)
         })
 
     }
@@ -39,7 +38,7 @@ export default class MessageController{
         this.attachCloseButtonListener(button)
     }
         
-    showEmptyState(message){                //falta probarlo con items vacío en el db.JSON
+    showEmpty(message){                
         this.element.innerHTML = emptyView(message)
         const button = this.element.querySelector('button')
         this.attachCloseButtonListener(button)
