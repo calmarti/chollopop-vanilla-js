@@ -13,38 +13,44 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light"></nav>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light"></nav>
 
   <div class="loader-container"></div>
 
   <div class="message-container"></div>
 
  
-    <h1>Inicia sesión</h1>
+  <h1 id="login-title">Inicia sesión</h1>
   
 
-  <form id="login" class="container section" novalidate>
 
-    <div class="mb-3">
-      <label for="username" class="form-label">Usuario</label>
-      <input id="username" class="form-control" type="text" name="username" placeholder="Escribe tu nombre de usuario"
-        required autofocus>
-    </div>
+  <form id="login" class="section" novalidate>
 
-    <div class="mb-3">
-      <label for="password" class="label">Contraseña</label>
-      <input type="password" class="form-control" name="password" placeholder="Escribe tu contraseña" required>
-    </div>
+    <div class="mx-auto d-flex flex-column align-items-center justify-content-center w-50">  
+      
+      <div class="my-4">
+        <label for="username" class="form-label">Usuario
+        <input id="username" class="form-control-lg " type="text" name="username" placeholder="Escribe tu nombre de usuario"
+        required autofocus></label>
+      </div>
+      
+      <div class="me-4 my-4">
+        <label for="password" class="form-label">Contraseña
+        <input type="password" class="form-control-lg" name="password" placeholder="Escribe tu contraseña" required>
+      </div></label>
+      
+      <div class="my-4">
+        <button type="submit" class="btn btn-lg btn-primary ms-4 px-3 w-100">Continuar</button>
+      </div>
 
-    <div class="mb-3">
-      <button type="submit" class="btn btn-primary">Continuar</button>
     </div>
+ 
   </form>
-        
-  
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
     crossorigin="anonymous"></script>
 

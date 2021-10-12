@@ -4,8 +4,9 @@ import PubSub from '../services/PubSub.js'
 
 export default class ListOfItemsController {
 
-    constructor(element) {
+    constructor(element, page) {
         this.element = element
+        this.page = page
         this.renderListOfItems()
 
         PubSub.subscribe(PubSub.events.SEARCH, (keyword) => {
@@ -81,5 +82,9 @@ export default class ListOfItemsController {
         }
         
     }
+
+    const queryString = `?page=${page}`
+
+
 
 }

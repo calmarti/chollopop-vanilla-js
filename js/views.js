@@ -36,20 +36,28 @@ export function emptyView(message) {
 export function itemView(item) {
   return `
 
-<div class="card col-3" style="">
-<a href="/detail.html?id=${item.id}">
+<div class="card col-3">
+<a id="link-to-detail" href="/detail.html?id=${item.id}">
   <img src="http://lorempixel.com/400/200" class="card-img-top" alt="${item.name}">
   <div class="card-body">
-    <h5 class="card-title">
-    <strong>${item.name}</strong></h5>
-    <p class="card-text">${item.price}€</p>
-    <a href="/detail.html?id=${item.id}" class="btn btn-primary"> ${item.buysale}</a>
+    <h3 class="card-title">
+    <strong>${item.name}</strong>
+    </h3>
+    <br/>
+    <h3 class="card-text text-end">${item.price}€</h3>
+    <a href="/detail.html?id=${item.id}>
+    <h3 class="card-text"><strong>${item.buysale}</strong></h3>
+    <h4 class="card-text text-center">${item.tag}</h4>
+    </a>
   </div>
 </div>
 </a>
+
 `
 
 }
+
+//  <a href="/detail.html?id=${item.id}>
 
 
 export function itemDetailView(item) {

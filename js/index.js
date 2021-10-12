@@ -11,6 +11,7 @@ import FilterController from "./controllers/FilterController.js"
 //TODO:
 //Terminar de consumir el NavbarController
 //Si hay tiempo poner labels en los controles y demás temas de accesibilidad (section tags, main, etc.)
+//Si hay tiempo cambiar la typografy de bootstrap con una SASS
 
 //TODO: para fijar la navbar incluir la clase "fixed-top" y probar que no machaque nada
 //OPCIONALES: 
@@ -22,6 +23,8 @@ import FilterController from "./controllers/FilterController.js"
 //TODO: la navbar machaca el mensaje de éxito (y quizás los de error también) al menos en newitem.html, arreglar bajando con estilos css o modal
 
 window.addEventListener('DOMContentLoaded', () => {
+    
+    const page = new URLSearchParams(window.location.search).get('page')
     
     const navbar = document.querySelector('.navbar')
     const navbarController = new NavbarController(navbar)
@@ -45,5 +48,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const list = document.querySelector('.list-of-items')
     new ListOfItemsController(list /*search*/)
     
+    
+
 
 })

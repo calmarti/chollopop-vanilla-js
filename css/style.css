@@ -23,3 +23,106 @@
     border: red solid 3px;
   } */
 
+
+  /* customized CSS */
+
+
+
+  /* index.html*/
+
+ #home-title-container {
+   position:relative;
+   z-index:10;
+   background-color: gray;
+   
+  
+ } 
+
+  h1#home-title {
+    position:fixed;
+    top:-20px;
+    left:-200px;
+    font-size: 2rem; 
+    margin-left: 17rem;
+    margin-top: 8rem;
+    
+  }    
+
+ .list-of-items {
+   position:relative;
+   top:120px;
+ }
+
+  a#link-to-detail , .card-body > a { 
+
+  text-decoration:none;
+
+  }
+
+.card {
+width:18rem;
+margin: 2rem 1rem 1rem 3.5rem;
+
+}
+
+
+/* paginación del home */
+
+
+ 
+   
+  /* pagination position styling */
+  .pages {
+      position: absolute;
+      top: 985px;
+      right: 665px;
+  }
+   
+  /* pagination styling */
+  .pages a {
+      color: black;
+      padding: 10px 18px;
+      text-decoration: none;
+  }
+   
+  /* pagination hover effect on non-active */
+  .pages a:hover:not(.active) {
+      background-color: #031F3B;
+      color: white;
+  }
+   
+  /* pagination hover effect on active*/
+  .pages a:nth-child(2) {
+      background-color: green;
+      color: white;
+  }
+        
+  .pages a:nth-child(1) {
+      font-weight: bold;
+  }
+        
+  .pages a:nth-child(7) {
+      font-weight: bold;
+  }
+        
+
+
+
+
+
+  /*login.html*/
+
+  h1#login-title {
+
+    font-size: 2rem; 
+    margin-left: 53.5rem;
+    margin-top: 16rem;
+  
+    }
+
+  #login-container{
+  
+   height:50vh; 
+  
+  }
+
