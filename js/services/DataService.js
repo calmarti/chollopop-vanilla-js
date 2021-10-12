@@ -140,7 +140,15 @@ export default {
         const url = `http://127.0.0.1:8000/api/items?name_like=${keyword}`
         return this.request(url)
 
+    },
+    
+    getItemsByTag: function(tag){
+        const url = `http://127.0.0.1:8000/api/items?tag=${tag}`
+        return this.request(url)
+
     }
+
+
 
 }
 

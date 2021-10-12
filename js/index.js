@@ -4,16 +4,22 @@ import ListOfItemsController from "./controllers/ListOfItemsController.js"
 import SearchController from "./controllers/SearchController.js"
 import NavbarController from "./controllers/NavbarController.js"
 import DataService from "./services/DataService.js"
+import FilterController from "./controllers/FilterController.js"
+
+
 
 //TODO:
 //Terminar de consumir el NavbarController
+//Si hay tiempo poner labels en los controles y demás temas de accesibilidad (section tags, main, etc.)
 
+//TODO: para fijar la navbar incluir la clase "fixed-top" y probar que no machaque nada
 //OPCIONALES: 
 
-//Terminar la funcionalidad de full-text search
-//Gestionar la paginación de anuncios en el listado, ya que por defectojson-server sólodevuelve 10 elementos
-//Permitir el filtrado de anuncios usando tags. Por lo que en el formulario de anuncio deberánpoder incluirse tags de los mismos.
+//TODO: Gestionar la paginación de anuncios en el listado, ya que por defectojson-server sólo devuelve 10 elementos
+//TODO: Permitir el filtrado de anuncios usando tags. Por lo que en el formulario de anuncio deberán poder incluirse tags de los mismos.
+//TODO: Si hay tiempo mejorar el full-text search metiendole un keyword regex
 
+//TODO: la navbar machaca el mensaje de éxito (y quizás los de error también) al menos en newitem.html, arreglar bajando con estilos css o modal
 
 window.addEventListener('DOMContentLoaded', () => {
     
@@ -21,7 +27,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const navbarController = new NavbarController(navbar)
     
     if (DataService.isAuth()){
-        navbarController.renderAuthNavbar()
+        navbarController.changeButtons()
     }
 
     const loader = document.querySelector('.loader-container')
@@ -33,8 +39,11 @@ window.addEventListener('DOMContentLoaded', () => {
     const search = document.querySelector('#search')
     new SearchController(search)  
 
+    const filter = document.querySelector('#filter')
+    new FilterController(filter)
+
     const list = document.querySelector('.list-of-items')
     new ListOfItemsController(list /*search*/)
- 
+    
 
 })

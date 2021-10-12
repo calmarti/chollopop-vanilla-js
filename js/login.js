@@ -16,13 +16,15 @@ window.addEventListener('beforeunload', function() {
 window.addEventListener('DOMContentLoaded', function() {
     //PubSub.publish(PubSub.events.HIDE_LOADER)
 
-/*     const navbar = document.querySelector('.navbar')     //TODO: al meter navbar ya el login no devuelve el token ni redirige al index 
-    const navbarController = new NavbarController(navbar)  */
+    const navbar = document.querySelector('.navbar')     //TODO: al meter navbar ya el login no devuelve el token ni redirige al index 
+    const navbarController = new NavbarController(navbar)  
+    navbarController.hideButtons()
+    navbarController.disableSearchBox()
       
     const messageDiv = document.querySelector('.message-container')
     new MessageController(messageDiv)
 
-    const form = document.querySelector('form')
+    const form = document.querySelector('form#login')
     new LoginController(form)
 
 })

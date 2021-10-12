@@ -59,12 +59,12 @@ export function itemDetailView(item) {
     <strong>El anuncio que buscas no existe</strong>
   `
   }
- 
+
   let editButton = ''
   let deleteButton = ''
 
   if (item.isItemCreator) {
-    editButton =  `<button class="edit-button">Modificar</button>`
+    editButton = `<button class="edit-button">Modificar</button>`
     deleteButton = `<button class="delete-button">Borrar</button>`
   }
 
@@ -85,8 +85,7 @@ export function itemDetailView(item) {
 
 export function navbarView() {
   return `
-<div class="container-fluid">
-            <a class="navbar-brand" href="#">Logo de Chollopop</a>
+    <a class="navbar-brand" href="#">Logo de Chollopop</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -107,21 +106,29 @@ export function navbarView() {
 
                 <form class="d-flex container">
 
-                    <input id="search" name="search" class="form-control me-2" type="search" placeholder="Buscar artículo" aria-label="Search">
+                  <input id="search" name="search" class="form-control me-3" type="search" placeholder="Buscar artículo" aria-label="Search">
+                                      
+                  <select id="filter" name="filter" class="form-select form-select-lg mx-3" aria-label=".form-select-lg example">
+                    <option value="reset" selected>Categorías</option>
+                    <option value="hogar">Hogar</option>
+                    <option value="oficina">Oficina</option>
+                    <option value="ropa y calzado">Ropa y calzado</option>
+                    <option value="moviles">Móviles</option>
+                    <option value="informatica">Informática</option>
+                    <option value="entretenimiento">Entretenimiento</option>
+                    <option value="otros">Otros</option>
+                  </select>
                   
-                    <button class="btn btn-outline-success btn-lg me-md-2" type="submit">Buscar</button>
-
+               
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                         <a id="first-button" href="/login.html" class="btn btn-primary btn-lg me-md-2 text-nowrap" 
                             role="button">Iniciar sesión</a>
                         <a id="second-button" href="/signup.html" class="btn btn-primary btn-lg text-nowrap" type="button" role="button">Regístrate</a>
                     </div>
-
-                </form>
-
-            </div>
-        </div>`
+                </form>`
 }
 
+//<button class="btn btn-outline-success btn-lg me-md-2" type="submit">Buscar</button>
 
-
+//<div class="container-fluid">
+//</div>

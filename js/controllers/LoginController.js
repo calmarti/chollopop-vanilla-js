@@ -23,7 +23,7 @@ export default class LoginController {
                     //probar a eliminar el 'result' dejando solo la ejecución del await (ya que no devuelve realmente nada)
                     window.location.href = params.get('next') || '/'
                     //TODO: redireccionar a un 'index.html' sin los botones de login y registrarse (identificar primero donde iría esto) 
-                    //TODO: impedir que se muestra la página de login si el usuario está autenticado (¿en login.js?) --- pensarlo bien pues podría ser rizar el rizo y dificultar la evaluación    
+                     
                 } catch (error) {
                     PubSub.publish(PubSub.events.SHOW_ERROR, error) //no pilla el 'wrong username/pasword' (se debe algo en el handling de errors de request())
                 }

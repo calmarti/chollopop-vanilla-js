@@ -9,7 +9,8 @@ export default {
     SHOW_LOADER: 'SHOW_LOADER',
     HIDE_LOADER: 'HIDE_LOADER',
     SHOW_EMPTY: 'SHOW_EMPTY',
-    SEARCH: 'SEARCH'
+    SEARCH: 'SEARCH',
+    FILTER: 'FILTER'
   },
 
   subscribe: function (topic, listener) {

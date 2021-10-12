@@ -14,14 +14,15 @@ window.addEventListener('beforeunload', function() {
 window.addEventListener('DOMContentLoaded', function(){
     //PubSub.publish(PubSub.events.HIDE_LOADER)
     
-    /*     const navbar = document.querySelector('.navbar')
-        const navbarController = new NavbarController(navbar) */
+    const navbar = document.querySelector('.navbar')
+    const navbarController = new NavbarController(navbar) 
+    navbarController.hideSecondButton()
+    navbarController.disableSearchBox()
         
     const messageDiv = document.querySelector('.message-container')
     new MessageController(messageDiv)
 
-
-    const form = document.querySelector('form')
+    const form = document.querySelector('form#signup')
     new SignUpController(form)
 
 })

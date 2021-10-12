@@ -2,6 +2,7 @@ import EditItemController from './controllers/EditItemController.js'
 import LoaderController from './controllers/LoaderController.js'
 import MessageController from './controllers/MessageController.js'
 import DataService from './services/DataService.js'
+import NavbarController from "./controllers/NavbarController.js"
 
 
 window.addEventListener('DOMContentLoaded', function() {
@@ -20,8 +21,16 @@ window.addEventListener('DOMContentLoaded', function() {
     const messageDiv = document.querySelector('.message-container')
     new MessageController(messageDiv)
 
+    const navbar = document.querySelector('.navbar')
+    const navbarController = new NavbarController(navbar)
+    navbarController.disableSearchBox()
+    
+    if (DataService.isAuth()){
+        navbarController.changeButtons()
+    }
 
-    const form = document.querySelector('form')
+
+    const form = document.querySelector('form#edititem')
 
     new EditItemController(form, itemId)
     

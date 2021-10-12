@@ -12,13 +12,15 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light"></nav>
+
     <h1 class="title">Crea un nuevo anuncio</h1>
 
     <div class="loader-container"></div>
     
     <div class="message-container"></div>
 
-    <form  novalidate>
+    <form id="newitem" novalidate>
 
         <div>
             <label class="label">Nombre del producto</label>
@@ -37,7 +39,7 @@
 
         <div class="select">
             <select name="buysale" required>
-                <option value="">¿Compras o vendes?</option>
+                <option value="" selected>¿Compras o vendes?</option>
                 <option value="sale">Vendo</option>
                 <option value="buy">Compro</option>
             </select>

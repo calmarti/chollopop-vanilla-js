@@ -5,15 +5,16 @@ export default class NavbarController{
     constructor(element){
         this.element = element
         this.renderDefaultNavbar()
-        
+       
     }
 
-    //TODO: cambiar nombre a renderDefaultNavabar
+    //TODO: esconder el tag-menu del navbar cuando corresponda
+   
     renderDefaultNavbar(){
         this.element.innerHTML = navbarView()
     }
 
-    renderAuthNavbar(){
+    changeButtons(){
         const firstButton = this.element.querySelector('#first-button')
         firstButton.innerText = 'Salir'
         firstButton.setAttribute('href', '/')
@@ -32,26 +33,30 @@ export default class NavbarController{
     }
     
 
-    renderSimpleNavbar(){
-        const form = this.element.querySelector('form')
+    hideButtons(){
+        //const form = this.element.querySelector('form')
         //form.hidden = true     
-        form.remove()     //los estilos de bootstrap parecen prevalecer sobre 'form.hidden=true' por lo que uso remove()
-        
+        //form.remove()     //los estilos de bootstrap parecen prevalecer sobre 'form.hidden=true' por lo que uso remove()
+       
+        this.element.querySelector('#first-button').style.display = 'none'
+        this.element.querySelector('#second-button').style.display = 'none'
     }
 
-    renderSimpleAuthNavbar(){
-
+    hideSecondButton(){
+        this.element.querySelector('#second-button').style.display ='none' 
+        //form.hidden = true     
+       
     }
 
-        
-    
-    //Si usuario autenticado ==> elimina botones login y signup y añade botón crear anuncio en: index y detail 
-    //TODO: En detail: elimina search box y search button, solo muestra Home, crear anuncio y salir 
-
-    //TODO: En login y signup: solo muestra Home si está autenticado
-    //TODO: En newitem: solo muestra Home y salir 
-    //TODO: En edititem: solo muestra Home y salir
-
+    disableSearchBox(){
+        this.element.querySelector('#search').setAttribute('disabled', 'disabled')
+    }
 
 }
+    
+
+
+  
+
+
 

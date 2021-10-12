@@ -6,7 +6,8 @@ export default class SignUpController {
     
     //TODO: set custom validation para el campo password con 'pattern' (regex)
     //TODO: arreglar posible conflicto entre validación de igualdad de contraseñas y el minlength (¿usar setCustomValidity?)
-    
+    //TODO: no muestra el error de 'username taken' sino un error genérico 400 de 'bad request'
+
     constructor(element) {
         
         this.element = element

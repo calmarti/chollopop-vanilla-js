@@ -15,9 +15,10 @@ window.addEventListener('DOMContentLoaded', function() {
 
     const navbar = document.querySelector('.navbar')
     const navbarController = new NavbarController(navbar)
+    navbarController.disableSearchBox()
     
     if (DataService.isAuth()){
-        navbarController.renderAuthNavbar()
+        navbarController.changeButtons()
     }
 
     const url = new URLSearchParams(window.location.search)
