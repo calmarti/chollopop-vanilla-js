@@ -109,6 +109,28 @@ top:12rem;
   
     }
 
+    /*signup.html*/
+
+    h1#signup-title{
+    
+      font-size: 2rem; 
+      margin-left: 47rem;
+      margin-top: 8rem;
+      padding-bottom:4rem;
+     
+    }
+
+
+  /*edititem.html*/
+  
+  h1#edit-title{
+
+    font-size: 2rem; 
+    margin-left: 48rem;
+    margin-top: 8rem;
+    padding-bottom:4rem;
+
+  }
 
   /* detail.html */
 
