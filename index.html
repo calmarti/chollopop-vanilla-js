@@ -15,13 +15,16 @@
 <body>
 
 
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light"></nav>
-    
-    <div id="home-title-container">
-        <h1 id="home-title">Chollos de segunda mano</h1>
+    <nav class="navbar navbar-expand fixed-top navbar-light bg-light"></nav>
+
+
+    <div class="container-wrapper">
+        <div id="home-title-container">
+            <h1 id="home-title">Compra o vende lo que quieras en Chollopop</h1>
+        </div>
     </div>
-    
-    
+
+
     <hr>
 
     <div class="loader-container"></div>
@@ -29,23 +32,29 @@
     <div class="message-container"></div>
 
 
-    <!-- <div class="container"> -->
-        <div class="list-of-items row"></div>
-  <!--   </div> -->
+     <div class="container"> 
+    <div class="list-of-items row"></div>
+       </div>  
 
-  <div class="pages">
-    <a href="#"><< Anterior</a>
-   <!--  <a href="#"><< Primer</a> -->
-    <a href="/?page=1" class="one active">1</a>
-    <a href="/?page=2" class="two">2</a>
-    <a href="/?page=3" class="three">3</a>
-    <a href="/?page=4"#" class="four">4</a>
-    <a href="/?page=5"#" class="five">5</a>
-    <a href="#">Siguiente >></a>
-</div>
+    <nav class="pagination-bar" aria-label="page-navigation-section">
 
-
-
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="/?page=1">1</a></li>
+            <li class="page-item"><a class="page-link" href="/?page=2">2</a></li>
+            <li class="page-item"><a class="page-link" href="/?page=3">3</a></li>
+            <li class="page-item"><a class="page-link" href="/?page=4">4</a></li>
+            <li class="page-item"><a class="page-link" href="/?page=5">5</a></li>
+            <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+            </li>
+        </ul>
+    </nav>
 
 
 

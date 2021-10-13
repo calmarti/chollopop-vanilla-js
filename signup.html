@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Regístrate</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Regístrate</title>
 </head>
+
 <body>
-    
-   <nav class="navbar navbar-expand-lg navbar-light bg-light"></nav>  
 
-   <div class="loader-container"></div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light"></nav>
 
-   <div class="message-container"></div>
+  <div class="loader-container"></div>
 
-<!-- <script type="module">   
+  <div class="message-container"></div>
+
+  <!-- <script type="module">   
 
 import LoaderController from '/js//controllers/LoaderController.js'
 import PubSub from '/js/services/PubSub.js'
@@ -29,44 +32,54 @@ PubSub.publish(PubSub.events.SHOW_LOADER)
 
 </script> -->
 
+  <h1 class="title">Regístrate en Chollopop</h1>
 
 
-<h1 class="title">Regístrate en Chollopop</h1>
 
-<form id="signup" class="container section" novalidate>
+  <form id="signup" class="container section" novalidate>
 
-    <div>
-        <label class="label">Usuario</label>
-        <div class="control">
-          <input  type="text" name="username" placeholder="Crea tu nombre de usuario" required autofocus>
-        </div>
-      </div>
+    <div class="mx-auto d-flex flex-column align-items-center justify-content-center w-50">
 
-      <div class="field">
-        <label class="label">Contraseña</label>
-        <div class="control">          
-          <input type="password" name="password" placeholder="Crea tu contraseña" minlength="3" required>
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Confirma tu contraseña</label>
-        <div class="control">
-          <input type="password" name="password-confirmation" placeholder="Escribe de nuevo tu contraseña" minlength="3" required>
-        </div>
+      <div class="my-4">
+        <label for="username" class="form-label">
+          <p>Usuario</p>
+          <input id="username" class="form-control-lg" name="username" type="text"
+            placeholder="Crea tu nombre de usuario" required autofocus>
+        </label>
       </div>
 
 
-      <div class="field">
-        <div class="control">
-          <button  type="submit" disabled>Continuar</button>
-        </div>
+      <div class="my-4">
+        <label for="password" class="form-label">
+          <p>Contraseña</p>
+          <input id="password" class="form-control-lg" type="password" name="password" placeholder="Crea tu contraseña" minlength="3" required>
+        </label>
       </div>
 
-</form>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
-<script type="module" src="js/signup.js"></script>
+      <div class="my-4">
+        <label for="password" class="form-label">
+          <p>Confirma tu contraseña</p>
+          <input id="password" class="form-control-lg" type="password" name="confirmation" placeholder="Escribe de nuevo tu contraseña"
+            minlength="3" required>
+        </label>
+      </div>
+
+
+      <div class="my-4">
+        <button type="submit" class="btn btn-lg btn-primary ms-1 px-5 w-100" disabled>Continuar</button>
+      </div>
+
+    </div>
+
+  </form>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+    crossorigin="anonymous"></script>
+  <script type="module" src="js/signup.js"></script>
 
 </body>
+
 </html>

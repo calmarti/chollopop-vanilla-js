@@ -58,8 +58,8 @@ export default {
 
     },
 
-    getListOfItems: async function () {
-        const url = `http://127.0.0.1:8000/api/items?page=${page}`
+    getListOfItems: async function (page) {
+        const url = `http://127.0.0.1:8000/api/items?_page=${page}`
         const parsedResponse = await this.request(url)
         //console.log(parsedResponse)        
         return parsedResponse

@@ -30,27 +30,47 @@
 
   /* index.html*/
 
- #home-title-container {
-   position:relative;
-   z-index:10;
-   background-color: gray;
-   
-  
+body {
+  margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+div#container-wrapper {
+  position:relative;
+
+}
+
+ div#home-title-container {
+   position:fixed;
+   top:4rem;
+   height: 6rem;
+   width: 100vw;
+   z-index: 10;
+   background-color:black;
+     
  } 
 
   h1#home-title {
     position:fixed;
-    top:-20px;
-    left:-200px;
-    font-size: 2rem; 
     margin-left: 17rem;
     margin-top: 8rem;
+    top:-2rem;
+    left:-14rem;
+    font-size: 2rem; 
+    color: white;
+   /*  background-color: black; */
+    display:block;
+    z-index:1;
+    
     
   }    
 
+
  .list-of-items {
    position:relative;
-   top:120px;
+   top:10rem;
+   width:100vw;
  }
 
   a#link-to-detail , .card-body > a { 
@@ -59,70 +79,43 @@
 
   }
 
+
 .card {
-width:18rem;
+width:20rem;
 margin: 2rem 1rem 1rem 3.5rem;
 
 }
 
 
-/* paginación del home */
+/* paginación de la lista de items */
 
+.pagination-bar{
 
- 
-   
-  /* pagination position styling */
-  .pages {
-      position: absolute;
-      top: 985px;
-      right: 665px;
-  }
-   
-  /* pagination styling */
-  .pages a {
-      color: black;
-      padding: 10px 18px;
-      text-decoration: none;
-  }
-   
-  /* pagination hover effect on non-active */
-  .pages a:hover:not(.active) {
-      background-color: #031F3B;
-      color: white;
-  }
-   
-  /* pagination hover effect on active*/
-  .pages a:nth-child(2) {
-      background-color: green;
-      color: white;
-  }
-        
-  .pages a:nth-child(1) {
-      font-weight: bold;
-  }
-        
-  .pages a:nth-child(7) {
-      font-weight: bold;
-  }
-        
+position:relative;
+left:48rem;
+top:12rem;
 
+}
 
-
-
-
+  
   /*login.html*/
 
   h1#login-title {
 
     font-size: 2rem; 
-    margin-left: 53.5rem;
+    margin-left: 52rem;
     margin-top: 16rem;
+    padding-bottom:2rem;
   
     }
 
-  #login-container{
-  
-   height:50vh; 
-  
+
+  /* detail.html */
+
+  .item-container {
+
+    position:relative;
+    top:5rem;
+    left:13rem;
   }
 

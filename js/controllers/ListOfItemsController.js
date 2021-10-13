@@ -1,13 +1,14 @@
-import { itemView } from '../views.js';
+import { itemView , /* paginationView  */} from '../views.js';
 import DataService from '../services/DataService.js';
 import PubSub from '../services/PubSub.js'
 
 export default class ListOfItemsController {
 
-    constructor(element, page) {
+    constructor(element,page) {
         this.element = element
-        this.page = page
-        this.renderListOfItems()
+        console.log('desde el constructor', page)
+        this.renderListOfItems(page)
+        //this.renderPaginationBar()
 
         PubSub.subscribe(PubSub.events.SEARCH, (keyword) => {
             this.handleSearchEvent(keyword)
@@ -21,13 +22,13 @@ export default class ListOfItemsController {
 
     //TODO: refactorizar renderListofItems (cambiar nombre): separar la obtención de datos del server del renderizado
 
-    async renderListOfItems() {
+    async renderListOfItems(page) {
 
         PubSub.publish(PubSub.events.SHOW_LOADER)
 
         
         try {
-            const items = await DataService.getListOfItems()
+            const items = await DataService.getListOfItems(page)
             if (items.length === 0) {
                 return PubSub.publish(PubSub.events.SHOW_EMPTY, 'Lo siento, no existe ningún anuncio por ahora') //probar con Db.json
             }
@@ -44,8 +45,16 @@ export default class ListOfItemsController {
             PubSub.publish(PubSub.events.HIDE_LOADER)
         }
 
-
     }
+
+/*     renderPaginationBar(){
+        const bar = this.element.querySelector('.pagination-bar')
+        bar.innerHTML = paginationView()
+
+    } */
+
+
+    
     
     async handleSearchEvent(keyword) {
         this.element.innerHTML = ''
@@ -83,7 +92,7 @@ export default class ListOfItemsController {
         
     }
 
-    const queryString = `?page=${page}`
+    
 
 
 

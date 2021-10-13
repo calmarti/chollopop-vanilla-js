@@ -35,8 +35,7 @@ export function emptyView(message) {
 
 export function itemView(item) {
   return `
-
-<div class="card col-3">
+<div class="card col-6">
 <a id="link-to-detail" href="/detail.html?id=${item.id}">
   <img src="http://lorempixel.com/400/200" class="card-img-top" alt="${item.name}">
   <div class="card-body">
@@ -46,7 +45,7 @@ export function itemView(item) {
     <br/>
     <h3 class="card-text text-end">${item.price}€</h3>
     <a href="/detail.html?id=${item.id}>
-    <h3 class="card-text"><strong>${item.buysale}</strong></h3>
+    <h3 class="card-text"><strong>${item.buy_or_sale}</strong></h3>
     <h4 class="card-text text-center">${item.tag}</h4>
     </a>
   </div>
@@ -72,18 +71,20 @@ export function itemDetailView(item) {
   let deleteButton = ''
 
   if (item.isItemCreator) {
-    editButton = `<button class="edit-button">Modificar</button>`
-    deleteButton = `<button class="delete-button">Borrar</button>`
+    editButton = `<button class="edit-button btn btn-primary">Modificar</button>`
+    deleteButton = `<button class="delete-button btn btn-danger">Borrar</button>`
   }
 
   return `
-  <div class="card col-3" style="">
+  <div class="card col-8" style="">
   <img src="http://lorempixel.com/400/200" class="card-img-top" alt="${item.name}">
   <div class="card-body">
-    <h5 class="card-title">
-    <strong>${item.name}</strong></h5>
-    <p class="card-text">${item.price}€</p>
-    <a href="detail.html" class="btn btn-primary"> ${item.buysale}</a>
+    <h2 class="card-title">
+    <strong>${item.name}</strong></h3>
+    <br/>
+    <h3 class="card-text text-end">${item.price}€</h3>
+    <h3 class="card-text">${item.buy_or_sale}</h3>
+    <h4 class="card-text text-center">${item.tag}</h4>
     ${editButton}
     ${deleteButton}  
   </div>
@@ -135,6 +136,32 @@ export function navbarView() {
                     </div>
                 </form>`
 }
+
+
+/* 
+export  function paginationView (){
+  return `
+ 
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>`
+
+} */
+
+
 
 //<button class="btn btn-outline-success btn-lg me-md-2" type="submit">Buscar</button>
 

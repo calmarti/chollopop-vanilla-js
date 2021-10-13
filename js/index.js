@@ -9,22 +9,27 @@ import FilterController from "./controllers/FilterController.js"
 
 
 //TODO:
+//eliminar menú de filtros de todas las páginas distintas al Home
 //Terminar de consumir el NavbarController
 //Si hay tiempo poner labels en los controles y demás temas de accesibilidad (section tags, main, etc.)
-//Si hay tiempo cambiar la typografy de bootstrap con una SASS
+//Si hay tiempo cambiar la typografy de bootstrap con SASS
 
 //TODO: para fijar la navbar incluir la clase "fixed-top" y probar que no machaque nada
 //OPCIONALES: 
 
-//TODO: Gestionar la paginación de anuncios en el listado, ya que por defectojson-server sólo devuelve 10 elementos
-//TODO: Permitir el filtrado de anuncios usando tags. Por lo que en el formulario de anuncio deberán poder incluirse tags de los mismos.
-//TODO: Si hay tiempo mejorar el full-text search metiendole un keyword regex
+//TODO: Paginación: faltaría 'anterior', 'siguiente', 'primero' y 'último'
+//TODO: Filtrado por tags: faltaría solo incluir el campo en el formulario de creación de item y en el dB.json
+
 
 //TODO: la navbar machaca el mensaje de éxito (y quizás los de error también) al menos en newitem.html, arreglar bajando con estilos css o modal
 
 window.addEventListener('DOMContentLoaded', () => {
+
+    let page = new URLSearchParams(window.location.search).get('page')
+    if (!page){
+        page = '1'
+    }
     
-    const page = new URLSearchParams(window.location.search).get('page')
     
     const navbar = document.querySelector('.navbar')
     const navbarController = new NavbarController(navbar)
@@ -46,7 +51,7 @@ window.addEventListener('DOMContentLoaded', () => {
     new FilterController(filter)
 
     const list = document.querySelector('.list-of-items')
-    new ListOfItemsController(list /*search*/)
+    new ListOfItemsController(list, page)
     
     
 
