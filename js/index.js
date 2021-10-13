@@ -9,6 +9,8 @@ import FilterController from "./controllers/FilterController.js"
 
 
 //TODO:
+
+//problemilla en edititem: no valida cuando se deja el campo 'tag' vacío (¿será porque es de tipo select?)
 //eliminar menú de filtros de todas las páginas distintas al Home
 //Terminar de consumir el NavbarController
 //Si hay tiempo poner labels en los controles y demás temas de accesibilidad (section tags, main, etc.)

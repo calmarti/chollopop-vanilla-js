@@ -17,7 +17,8 @@ export default class EditItemController {
        const oldData = await DataService.getItemDetail(itemId)
        this.element.querySelector('input[name="name"]').value = oldData.name
        this.element.querySelector('input[name="price"]').value = oldData.price
-       this.element.querySelector('select[name="buysale"]').value = oldData.buysale
+       this.element.querySelector('select[name="buy_or_sale"]').value = oldData.buy_or_sale
+       this.element.querySelector('select[name="tag"]').value = oldData.tag
        this.element.querySelector('input[name="picture"]').value = oldData.picture
         
     }

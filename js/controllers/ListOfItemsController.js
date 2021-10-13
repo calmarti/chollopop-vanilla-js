@@ -74,7 +74,7 @@ export default class ListOfItemsController {
     }
 
     async handleFilterEvent(tag){
-        console.log(tag)
+        //console.log(tag)
         if (tag==='reset'){
             this.renderListOfItems()
         }
