@@ -1,6 +1,6 @@
 import PubSub from "../services/PubSub.js"
 import DataService from "../services/DataService.js"
-import { itemDetailView } from "../views.js"
+import { itemDetailView} from "../views.js"
 
 export default class ItemDetailController {
 
@@ -37,8 +37,12 @@ export default class ItemDetailController {
 
     async showItemDetail(itemId) {
         PubSub.publish(PubSub.events.SHOW_LOADER)
+
         try {
             const item = await DataService.getItemDetail(itemId)
+            if (item === null){
+                return PubSub.publish(PubSub.events.DETAIL_EMPTY, 'El anuncio que buscas no existe')
+            }
             DataService.isItemCreator(item)
             this.element.innerHTML = itemDetailView(item)
 

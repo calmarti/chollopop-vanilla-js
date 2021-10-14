@@ -24,6 +24,7 @@ window.addEventListener('DOMContentLoaded', function() {
     const navbarController = new NavbarController(navbar)
     navbarController.changeButtons()
     navbarController.disableSearchBox()
+    navbarController.hideFilterMenu()
     navbarController.hideSecondButton()
     
 

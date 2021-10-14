@@ -20,6 +20,7 @@ window.addEventListener('DOMContentLoaded', function() {
     const navbarController = new NavbarController(navbar)  
     navbarController.hideButtons()
     navbarController.disableSearchBox()
+    navbarController.hideFilterMenu()
       
     const messageDiv = document.querySelector('.message-container')
     new MessageController(messageDiv)

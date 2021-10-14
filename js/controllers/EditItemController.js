@@ -17,7 +17,8 @@ export default class EditItemController {
        const oldData = await DataService.getItemDetail(itemId)
        this.element.querySelector('input[name="name"]').value = oldData.name
        this.element.querySelector('input[name="price"]').value = oldData.price
-       this.element.querySelector('select[name="buy_or_sale"]').value = oldData.buy_or_sale
+       this.element.querySelector('select[name="buyorsale"]').value = oldData.buyorsale
+       console.log(oldData.buyorsale, oldData.tag)
        this.element.querySelector('select[name="tag"]').value = oldData.tag
        this.element.querySelector('input[name="picture"]').value = oldData.picture
         
@@ -34,7 +35,9 @@ export default class EditItemController {
                     const data = new FormData(this.element)
                     const name = data.get('name')
                     const price = data.get('price')
-                    const buysale = data.get('buysale')
+                    const buyorsale = data.get('buyorsale')
+                    console.log(buyorsale)
+                    const tag = data.get('tag')
                     const picture = data.get('picture') 
                     
                     
@@ -42,7 +45,7 @@ export default class EditItemController {
                     //TODO: arreglar, no se muestra el loader al hacer la petición!
                     PubSub.publish(PubSub.events.SHOW_LOADER)   
 
-                    const result = await DataService.editItem(itemId, name, price, buysale, picture)  
+                    const result = await DataService.editItem(itemId, name, price, buyorsale, tag, picture)  
                     
                     //TODO: 'PUT' es idempotente, por tanto esta línea sería innecesaria: this.element.querySelector('.edit-item').setAttribute('disabled', 'disabled')
                     

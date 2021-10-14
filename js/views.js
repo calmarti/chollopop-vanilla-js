@@ -1,22 +1,4 @@
 
-export function errorView(error) {
-  return `
-    <div>
-    Error: ${error}
-    <button>Cerrar</button>
-    </div>
-    `
-}
-
-export function successView(success) {
-  return `
-  <div>
-  ${success}
-  <button>Cerrar</button>
-  </div>
-  `
-}
-
 export function loaderView() {
   return `
 <div class="spinner-border text-primary" role="status">
@@ -24,14 +6,46 @@ export function loaderView() {
 `
 }
 
-export function emptyView(message) {
-
+export function errorView(error) {
   return `
-<div>${message}
-<button>Cerrar</button>
-</div>
-`
+    <div id="error" class="alert alert-danger" role="alert">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+    <span>Error: ${error}</span>
+    <button type="button" class="btn btn-close" aria-label="Close"></button>
+    </div>
+    `
 }
+
+
+export function successView(success) {
+  return `
+  <div id="success" class="alert alert-success" role="alert">
+   <span>${success}</span>
+  <button type="button" class="btn btn-close" aria-label="Close"></button>
+  </div>
+  `
+}
+
+export function homeEmptyView(message){
+  return `
+  <div id="home-empty" class="alert alert-dark" role="alert">
+  <span>${message}</span>
+  <button type="button" class="btn btn-close" aria-label="Close"></button>
+  </div>`
+}
+
+export function detailEmptyView(message) {
+  return `
+  <div id="detail-empty" class="alert alert-dark" role="alert">
+  <span>${message}</span>
+  <button type="button" class="btn btn-close" aria-label="Close"></button>
+  </div>`
+   
+}
+
+
+
 
 export function itemView(item) {
   return `
@@ -45,27 +59,19 @@ export function itemView(item) {
     <br/>
     <h3 class="card-text text-end">${item.price}€</h3>
     <a href="/detail.html?id=${item.id}>
-    <h3 class="card-text"><strong>${item.buy_or_sale}</strong></h3>
+    <h3 class="card-text"><strong>${item.buyorsale}</strong></h3>
     <h4 class="card-text text-center">${item.tag}</h4>
     </a>
   </div>
 </div>
-</a>
-
-`
+</a>`
 
 }
 
-//  <a href="/detail.html?id=${item.id}>
+
 
 
 export function itemDetailView(item) {
-
-  if (item.empty) {
-    return `
-    <strong>El anuncio que buscas no existe</strong>
-  `
-  }
 
   let editButton = ''
   let deleteButton = ''
@@ -76,14 +82,14 @@ export function itemDetailView(item) {
   }
 
   return `
-  <div class="card col-8" style="">
+  <div class="card col-6" style="">
   <img src="http://lorempixel.com/400/200" class="card-img-top" alt="${item.name}">
   <div class="card-body">
     <h2 class="card-title">
     <strong>${item.name}</strong></h3>
     <br/>
     <h3 class="card-text text-end">${item.price}€</h3>
-    <h3 class="card-text">${item.buy_or_sale}</h3>
+    <h3 class="card-text">${item.buyorsale}</h3>
     <h4 class="card-text text-center">${item.tag}</h4>
     ${editButton}
     ${deleteButton}  
@@ -115,10 +121,10 @@ export function navbarView() {
 
                 <form class="d-flex container">
 
-                  <input id="search" name="search" class="form-control me-3" type="search" placeholder="Buscar artículo" aria-label="Search">
+                  <input id="search" name="search" class="form-control me-3" type="search" placeholder="Busca tu artículo" aria-label="Search">
                                       
                   <select id="filter" name="filter" class="form-select form-select-lg mx-3" aria-label=".form-select-lg example">
-                    <option value="reset" selected>Categorías</option>
+                    <option value="" selected>Categorías</option>
                     <option value="hogar">Hogar</option>
                     <option value="oficina">Oficina</option>
                     <option value="ropa y calzado">Ropa y calzado</option>

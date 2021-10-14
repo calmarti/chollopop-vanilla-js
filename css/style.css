@@ -69,8 +69,9 @@ div#container-wrapper {
 
  .list-of-items {
    position:relative;
-   top:10rem;
-   width:100vw;
+   top:16rem;
+   width:100%;
+   
  }
 
   a#link-to-detail , .card-body > a { 
@@ -87,13 +88,14 @@ margin: 2rem 1rem 1rem 3.5rem;
 }
 
 
-/* paginación de la lista de items */
+/* paginación de la lista de items (index.html)*/
 
 .pagination-bar{
 
 position:relative;
 left:48rem;
 top:12rem;
+margin-top:1rem;
 
 }
 
@@ -117,6 +119,7 @@ top:12rem;
       margin-left: 47rem;
       margin-top: 8rem;
       padding-bottom:4rem;
+
      
     }
 
@@ -127,10 +130,23 @@ top:12rem;
 
     font-size: 2rem; 
     margin-left: 48rem;
-    margin-top: 5rem;
+    margin-top: 6rem;
     padding-bottom:2rem;
 
   }
+
+
+/* newitem.html */
+
+h1#new-title {
+
+  font-size: 2rem; 
+  margin-left: 48rem;
+  margin-top: 6rem;
+  padding-bottom:2rem;
+
+
+}
 
   /* detail.html */
 
@@ -138,6 +154,44 @@ top:12rem;
 
     position:relative;
     top:5rem;
-    left:13rem;
+    left:22rem;
   }
 
+/* errorView function in views.js */
+
+div#error {
+position:relative;
+top:5rem;
+z-index:20;
+
+}
+
+/* sucessView function in views.js */
+
+div#success {
+  position:relative;
+  top:2rem;
+  z-index:20;
+  }
+
+
+  /* detailEmptyView in views.js*/
+
+div#detail-empty {
+  width:50%;
+  position:relative;
+  top:2rem;;
+  left:28rem;
+  z-index:20;
+  }
+
+
+
+  /*homeEmptyView in views.js */
+  
+ div#home-empty {
+
+  position:relative;
+  top:5rem;
+  z-index:20;
+ } 

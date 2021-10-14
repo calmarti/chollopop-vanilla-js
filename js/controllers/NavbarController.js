@@ -49,7 +49,12 @@ export default class NavbarController{
     }
 
     disableSearchBox(){
-        this.element.querySelector('#search').setAttribute('disabled', 'disabled')
+        this.element.querySelector('#search').setAttribute('disabled','disabled')
+    }
+
+    hideFilterMenu(){
+        this.element.querySelector('#filter').hidden=true
+        //setAttribute('disabled', 'disabled')
     }
 
 }

@@ -1,5 +1,5 @@
 import PubSub from '../services/PubSub.js'
-import {errorView, successView, emptyView} from '../views.js'
+import {errorView, successView, homeEmptyView, detailEmptyView} from '../views.js'
 
 export default class MessageController{
     constructor(element){
@@ -12,8 +12,12 @@ export default class MessageController{
             this.showSuccess(message)
         })
 
-        PubSub.subscribe(PubSub.events.SHOW_EMPTY, message => {
-            this.showEmpty(message)
+        PubSub.subscribe(PubSub.events.HOME_EMPTY, message => {
+            this.homeEmpty(message)
+        })
+
+        PubSub.subscribe(PubSub.events.DETAIL_EMPTY, message => {
+            this.detailEmpty(message)
         })
 
     }
@@ -37,9 +41,15 @@ export default class MessageController{
         const button = this.element.querySelector('button')
         this.attachCloseButtonListener(button)
     }
+
+    homeEmpty(message){
+        this.element.innerHTML = homeEmptyView(message)
+        const button = this.element.querySelector('button')
+        this.attachCloseButtonListener(button)
+    }
         
-    showEmpty(message){                
-        this.element.innerHTML = emptyView(message)
+    detailEmpty(message){                
+        this.element.innerHTML = detailEmptyView(message)
         const button = this.element.querySelector('button')
         this.attachCloseButtonListener(button)
     }

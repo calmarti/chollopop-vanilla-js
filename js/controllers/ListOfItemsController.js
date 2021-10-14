@@ -6,9 +6,9 @@ export default class ListOfItemsController {
 
     constructor(element,page) {
         this.element = element
-        console.log('desde el constructor', page)
+        //console.log('desde el constructor', page)
         this.renderListOfItems(page)
-        //this.renderPaginationBar()
+        
 
         PubSub.subscribe(PubSub.events.SEARCH, (keyword) => {
             this.handleSearchEvent(keyword)
@@ -30,7 +30,7 @@ export default class ListOfItemsController {
         try {
             const items = await DataService.getListOfItems(page)
             if (items.length === 0) {
-                return PubSub.publish(PubSub.events.SHOW_EMPTY, 'Lo siento, no existe ningún anuncio por ahora') //probar con Db.json
+                return PubSub.publish(PubSub.events.HOME_EMPTY, 'Lo siento, no existe ningún anuncio por ahora') //probar con Db.json
             }
             let htmlContent = ''
             for (const item of items) {
@@ -53,9 +53,7 @@ export default class ListOfItemsController {
 
     } */
 
-
-    
-    
+   
     async handleSearchEvent(keyword) {
         this.element.innerHTML = ''
         try {
@@ -75,7 +73,7 @@ export default class ListOfItemsController {
 
     async handleFilterEvent(tag){
         //console.log(tag)
-        if (tag==='reset'){
+        if (tag===''){
             this.renderListOfItems()
         }
         this.element.innerHTML = ''
@@ -93,7 +91,4 @@ export default class ListOfItemsController {
     }
 
     
-
-
-
 }

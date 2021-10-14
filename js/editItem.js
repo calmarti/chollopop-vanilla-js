@@ -24,6 +24,7 @@ window.addEventListener('DOMContentLoaded', function() {
     const navbar = document.querySelector('.navbar')
     const navbarController = new NavbarController(navbar)
     navbarController.disableSearchBox()
+    navbarController.hideFilterMenu()
     
     if (DataService.isAuth()){
         navbarController.changeButtons()

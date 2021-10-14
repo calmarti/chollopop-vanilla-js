@@ -3,8 +3,7 @@ export default {
 
 
     request: async function (url, method = 'GET', body = {}) {
-        //console.log('body:', body, 'method:', method, 'url:', url)
-        const config = {
+            const config = {
             method: method,
             headers: { 'content-type': 'application/json' },
         }
@@ -31,24 +30,30 @@ export default {
 
 
             if (response.ok) {
-             
                 return parsedResponse
             }
 
-            else if (response.status === 404) {
-                const id = new URLSearchParams(window.location.search).get('id')
+            else if (response.status===404){
+                return null
+            }
+
+/*              else if (response.status === 404) {
+
+            const id = new URLSearchParams(window.location.search).get('id')
                 if (id) {
                     parsedResponse['empty'] = true
                     return parsedResponse
                 }
                 else {
                     throw `${response.statusText}`
-                }
+                }  
+            }*/
 
-            }
             else {
                 throw `${response.statusText}`
-            }
+            } 
+
+
         }
         catch (error) {
             console.log(error)
@@ -59,6 +64,7 @@ export default {
     },
 
     getListOfItems: async function (page) {
+        //const url = 'https://gambarmobil.com/foto/bmw/239955-3-series-bmw-f30-320i-lci-2017-last-model-0faab85f-bcb2-4086-a372-0610a900453a.jpeg'
         const url = `http://127.0.0.1:8000/api/items?_page=${page}`
         const parsedResponse = await this.request(url)
         //console.log(parsedResponse)        
@@ -90,16 +96,16 @@ export default {
         return localStorage.getItem('AUTH_TOKEN') !== null
     },
 
-    postNewItem: async function (name, price, buysale, picture) {
+    postNewItem: async function (name, price, buyorsale, tag, picture) {
         const url = 'http://127.0.0.1:8000/api/items'
-        return await this.request(url, 'POST', { name, price, buysale, picture })
+        return await this.request(url, 'POST', { name, price, buyorsale, tag, picture })
     },
 
 
-    editItem: async function (itemId, name, price, buysale, picture) {
+    editItem: async function (itemId, name, price, buyorsale, tag, picture) {
         //console.log('parametros de editItem:', itemId, name, price, buysale, picture)
         const url = `http://127.0.0.1:8000/api/items/${itemId}`
-        return await this.request(url, 'PUT', { name, price, buysale, picture })
+        return await this.request(url, 'PUT', { name, price, buyorsale, tag, picture })
     },
 
 
@@ -129,11 +135,10 @@ export default {
         return input.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
     },
 
-        isItemCreator: function (item) {            //mover o refactorizar en función de creación de anuncio
-        item.isItemCreator = this.parseToken() === item.userId 
+    isItemCreator: function (item) {            //mover o refactorizar en función de creación de anuncio
+    item.isItemCreator = this.parseToken() === item.userId 
         
     
-        //console.log(item.canBeDeleted)
     },
 
     search: function(keyword){
