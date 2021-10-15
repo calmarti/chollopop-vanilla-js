@@ -11,7 +11,7 @@ export default class ItemDetailController {
 
 
     //TODO: publicar eventos de éxito al editar y al borrar y luego crear para botón redirigir ?
-    addEditFunctionality(itemId) {
+    addEditFeature(itemId) {
         const button = this.element.querySelector('.edit-button')
         if (button) {
             button.addEventListener('click', () => {
@@ -22,14 +22,23 @@ export default class ItemDetailController {
     }
 
 
-    addDeleteFunctionality(itemId) {
+    addDeleteFeature(itemId) {
         const button = this.element.querySelector('.delete-button')
         if (button) {
             button.addEventListener('click', async () => {
                 //TODO: mensaje de confirmación al usuario antes de borrar el anuncio, usar un modal de Bootstrap o algo así
-                await DataService.deleteItem(itemId)
-                window.location.href = '/?message=deleted-item'
-                button.setAttribute('disabled', 'disabled')
+                const answer = window.confirm('¿Seguro que quieres borrar el anuncio?')
+                if (answer===true){
+                    try{
+                        await DataService.deleteItem(itemId)
+                        window.location.href = '/?message=deleted-item'
+                    }catch(error){
+                        PubSub.publish(PubSub.events.SHOW_ERROR,error)
+                        button.setAttribute('disabled', 'disabled')
+                    }
+                }             
+                
+                
             })
         }
     }
@@ -46,8 +55,8 @@ export default class ItemDetailController {
             DataService.isItemCreator(item)
             this.element.innerHTML = itemDetailView(item)
 
-            this.addEditFunctionality(itemId) 
-            this.addDeleteFunctionality(itemId)
+            this.addEditFeature(itemId) 
+            this.addDeleteFeature(itemId)
 
         }
         catch (error) {

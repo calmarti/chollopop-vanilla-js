@@ -51,7 +51,7 @@ export function itemView(item) {
   return `
 <div class="card col-6">
 <a id="link-to-detail" href="/detail.html?id=${item.id}">
-  <img src="http://lorempixel.com/400/200" class="card-img-top" alt="${item.name}">
+  <img src="${item.picture}" class="card-img-top" alt="${item.name}">
   <div class="card-body">
     <h3 class="card-title">
     <strong>${item.name}</strong>
@@ -82,8 +82,8 @@ export function itemDetailView(item) {
   }
 
   return `
-  <div class="card col-6" style="">
-  <img src="http://lorempixel.com/400/200" class="card-img-top" alt="${item.name}">
+  <div class="card col-4" style="">
+  <img src="${item.picture}" class="card-img-top" alt="${item.name}">
   <div class="card-body">
     <h2 class="card-title">
     <strong>${item.name}</strong></h3>
@@ -125,13 +125,13 @@ export function navbarView() {
                                       
                   <select id="filter" name="filter" class="form-select form-select-lg mx-3" aria-label=".form-select-lg example">
                     <option value="" selected>Categorías</option>
-                    <option value="hogar">Hogar</option>
-                    <option value="oficina">Oficina</option>
-                    <option value="ropa y calzado">Ropa y calzado</option>
-                    <option value="moviles">Móviles</option>
-                    <option value="informatica">Informática</option>
-                    <option value="entretenimiento">Entretenimiento</option>
-                    <option value="otros">Otros</option>
+                    <option value="Hogar">Hogar</option>
+                    <option value="Oficina">Oficina</option>
+                    <option value="Ropa y calzado">Ropa y calzado</option>
+                    <option value="Móviles">Móviles</option>
+                    <option value="Informática y electrónica">Informática</option>
+                    <option value="Entretenimiento">Entretenimiento</option>
+                    <option value="Otros">Otros</option>
                   </select>
                   
                

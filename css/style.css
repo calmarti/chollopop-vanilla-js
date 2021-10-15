@@ -36,14 +36,21 @@ body {
 	border: 0;
 }
 
-div#container-wrapper {
+.loader-container-home {
   position:relative;
-
+  top:12rem;
+  left:4rem;
+  z-index:30;
 }
 
- div#home-title-container {
-   position:fixed;
-   top:4rem;
+div#container-wrapper {
+  position:relative;
+  
+}
+
+div#home-title-container {
+  position:fixed;
+  top:4rem;
    height: 6rem;
    width: 100vw;
    z-index: 10;
@@ -94,7 +101,7 @@ margin: 2rem 1rem 1rem 3.5rem;
 
 position:relative;
 left:48rem;
-top:12rem;
+top:16rem;
 margin-top:1rem;
 
 }
@@ -116,7 +123,7 @@ margin-top:1rem;
     h1#signup-title{
     
       font-size: 2rem; 
-      margin-left: 47rem;
+      margin-left: 46rem;
       margin-top: 8rem;
       padding-bottom:4rem;
 
@@ -151,10 +158,9 @@ h1#new-title {
   /* detail.html */
 
   .item-container {
-
     position:relative;
     top:5rem;
-    left:22rem;
+    left:33rem;
   }
 
 /* errorView function in views.js */
@@ -183,6 +189,7 @@ div#detail-empty {
   top:2rem;;
   left:28rem;
   z-index:20;
+
   }
 
 
@@ -190,7 +197,6 @@ div#detail-empty {
   /*homeEmptyView in views.js */
   
  div#home-empty {
-
   position:relative;
   top:5rem;
   z-index:20;

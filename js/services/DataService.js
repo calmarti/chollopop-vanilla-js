@@ -8,11 +8,9 @@ export default {
             headers: { 'content-type': 'application/json' },
         }
         if (config.method === 'POST' || config.method === 'PUT') {
-            let params = JSON.stringify(body)
-            //console.log('params:', params)
-            params = this.escapeHTML(params)
-            config['body'] = params
-
+            const escapedBody = this.escapeHTML(body)  
+            const stringifiedBody= JSON.stringify(escapedBody)
+            config['body'] = stringifiedBody
         }
 
         if (this.isAuth()) {
@@ -65,7 +63,7 @@ export default {
 
     getListOfItems: async function (page) {
         //const url = 'https://gambarmobil.com/foto/bmw/239955-3-series-bmw-f30-320i-lci-2017-last-model-0faab85f-bcb2-4086-a372-0610a900453a.jpeg'
-        const url = `http://127.0.0.1:8000/api/items?_page=${page}`
+        const url = `http://127.0.0.1:8000/api/items?_page=${page}&_limit=9`
         const parsedResponse = await this.request(url)
         //console.log(parsedResponse)        
         return parsedResponse
@@ -131,9 +129,25 @@ export default {
         }
     },
 
-    escapeHTML(input) {      //TODO: mejorar función (ampliar lista de chars)
-        return input.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    escapeHTML(body) {      
+                 
+        for (const key of Object.keys(body)){
+    
+            body[key] = body[key]
+            .replace(/&/g,'&amp;')
+            .replace(/</g,'&lt;')
+            .replace(/>/g,'&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;')
+        }
+        return body       
     },
+        
+     
+        
+      
+        
+           
 
     isItemCreator: function (item) {            //mover o refactorizar en función de creación de anuncio
     item.isItemCreator = this.parseToken() === item.userId 

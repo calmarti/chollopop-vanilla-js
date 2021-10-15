@@ -3,9 +3,14 @@ import LoaderController from './controllers/LoaderController.js'
 import MessageController from './controllers/MessageController.js'
 import DataService from './services/DataService.js'
 import NavbarController from "./controllers/NavbarController.js"
+import PubSub from './services/PubSub.js'
 
 
 window.addEventListener('DOMContentLoaded', function() {
+    const loader = document.querySelector('.loader-container')
+    new LoaderController(loader)
+    
+    
     const url = new URLSearchParams(window.location.search)
     const itemId = url.get('id')
     console.log(itemId)
@@ -15,8 +20,6 @@ window.addEventListener('DOMContentLoaded', function() {
         window.location.href = `/login.html${queryString}`
     }
        
-    const loader = document.querySelector('.loader-container')
-    new LoaderController(loader)
 
     const messageDiv = document.querySelector('.message-container')
     new MessageController(messageDiv)

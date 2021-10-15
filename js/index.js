@@ -7,27 +7,23 @@ import DataService from "./services/DataService.js"
 import FilterController from "./controllers/FilterController.js"
 
 
+//TODO: Crear el json con 30 - 40 artículos con todos sus campos llenos, ponerle el atributo userId a todos los anuncios por defecto (dejar un usuario 'ivan' y asignarle todos los anuncios)
 
-//TODO: estética y cosas menores
-//Logo de Chollopop
-//evitar que el contenido del Home 'baile'!
-//eliminar menú de filtros de todas las páginas distintas al Home
-//Terminar de consumir el NavbarController
-//Si hay tiempo poner labels en los controles y demás temas de accesibilidad (section tags, main, etc.)
-//Si hay tiempo cambiar la typografy de bootstrap con SASS
+//TODO: Intentar que arroje en login: "Wrong user/password" en lugar de  "Unauthorized" y en signup: "Bad request" en vez de "Username taken"
+
+//TODO: Decidir si meto o no validación de minlength en campo contraseña y decidir validación de price como número
+
+//TODO: VOLVER A LEER EL ENUNCIADO por si me he dejado algo!
 
 //TODO: para el README:
 //en general, meter los cabos sueltos para dejar constancia que soy consciente de ellos
+//aclarar que tanto en login como en signup el loader solo se muestra al refrescar, no al aterrizar desde el home (u otra pág) 
 //aclarar que al crear un anuncio el botón se desabilita para repetir el mismo post, por tanto hay que refrescar la pág para crear otro anuncio.
-//TODO: Decidir si meto o no validación de minlength en campo contraseña
-//TODO: Arreglar mensajes de error y éxito en TODAS las páginas (que no los machaque la navbar u otro elemento), darles estilo con los alert de Bootstrap
-//TODO: CRUCIAL: Mejorar método escapeHTML y hacer pruebas en todos los formularios que están blindados contra el HTML injection
-//TODO: Crear el json con 30 - 40 artículos con todos sus campos llenos, ponerle el atributo userId a todos los anuncios por defecto (dejar un usuario 'ivan' y asignarle todos los anuncios)
-//TODO: ¿meter el _expand en las URL aunque no me haga falta?
-//TODO: Hacer dinámico el filtrado por tags  
-//TODO: Paginación: faltaría 'anterior', 'siguiente', 'primero' y 'último' y tal vez limitar a un número necesario para que no hayan 'huecos' en la pantalla
 
-//TODO: la navbar machaca el mensaje de éxito (y quizás los de error también) al menos en newitem.html, arreglar bajando con estilos css o modal
+//TODO: asegurarse de que los values de los tags son idénticos (inicial en mayúsculas) tanto en el dB.json, como en el HTML como en el resto del código.
+
+//TODO: limpiar todo el código (¡no ser exhaustivo!)
+
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -44,7 +40,7 @@ window.addEventListener('DOMContentLoaded', () => {
         navbarController.changeButtons()
     }
 
-    const loader = document.querySelector('.loader-container')
+    const loader = document.querySelector('.loader-container-home')
     new LoaderController(loader)
     
     const message = document.querySelector('.message-container')

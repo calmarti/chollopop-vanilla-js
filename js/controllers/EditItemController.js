@@ -18,7 +18,7 @@ export default class EditItemController {
        this.element.querySelector('input[name="name"]').value = oldData.name
        this.element.querySelector('input[name="price"]').value = oldData.price
        this.element.querySelector('select[name="buyorsale"]').value = oldData.buyorsale
-       console.log(oldData.buyorsale, oldData.tag)
+       //console.log(oldData.buyorsale, oldData.tag)
        this.element.querySelector('select[name="tag"]').value = oldData.tag
        this.element.querySelector('input[name="picture"]').value = oldData.picture
         

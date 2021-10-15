@@ -12,7 +12,7 @@ window.addEventListener('beforeunload', function() {
 }) 
 
 window.addEventListener('DOMContentLoaded', function(){
-    //PubSub.publish(PubSub.events.HIDE_LOADER)
+    PubSub.publish(PubSub.events.HIDE_LOADER)
     
     const navbar = document.querySelector('.navbar')
     const navbarController = new NavbarController(navbar) 

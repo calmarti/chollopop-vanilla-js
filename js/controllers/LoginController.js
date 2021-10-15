@@ -13,8 +13,8 @@ export default class LoginController {
             event.preventDefault()
 
             if (this.element.checkValidity()) {
-                //TODO: ¿protección contra HTML injection?
-                const username = this.element.querySelector('input[type="text"]').value   //TODO: potencial cambio a 'email' 
+               
+                const username = this.element.querySelector('input[type="text"]').value  
                 const password = this.element.querySelector('input[type="password"]').value
                 const params = new URLSearchParams(window.location.search)
                 try {
@@ -22,7 +22,7 @@ export default class LoginController {
                     const result = await DataService.loginUser(username, password)
                     //probar a eliminar el 'result' dejando solo la ejecución del await (ya que no devuelve realmente nada)
                     window.location.href = params.get('next') || '/'
-                    //TODO: redireccionar a un 'index.html' sin los botones de login y registrarse (identificar primero donde iría esto) 
+                    
                      
                 } catch (error) {
                     PubSub.publish(PubSub.events.SHOW_ERROR, error) //no pilla el 'wrong username/pasword' (se debe algo en el handling de errors de request())

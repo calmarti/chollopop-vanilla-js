@@ -15,6 +15,7 @@ export default class newItemController {
     attachEventListeners() {
         this.element.addEventListener('submit', async event => {
             event.preventDefault()
+            
 
           
             if (this.element.checkValidity()) {
@@ -30,7 +31,7 @@ export default class newItemController {
                     
                     //console.log(itemData)
 
-                    PubSub.publish(PubSub.events.SHOW_LOADER)   //TODO: arreglar, no se muestra el loader al hacer la petición!
+                    PubSub.publish(PubSub.events.SHOW_LOADER)   
                     const result = await DataService.postNewItem(name, price, buyorsale, tag, picture)   //probar a eliminar el 'result' dejando solo la ejecución del await
                     
                     this.element.querySelector('.create-item').setAttribute('disabled', 'disabled')
@@ -61,4 +62,3 @@ export default class newItemController {
         })
     }
 }
-

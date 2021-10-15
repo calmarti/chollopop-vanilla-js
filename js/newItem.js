@@ -13,7 +13,7 @@ window.addEventListener('beforeunload', function() {
 }) 
 
 window.addEventListener('DOMContentLoaded', function() {
-    //PubSub.publish(PubSub.events.HIDE_LOADER)
+    PubSub.publish(PubSub.events.HIDE_LOADER)
 
     if (!DataService.isAuth()){
         const queryString = '?next=/newitem.html'
