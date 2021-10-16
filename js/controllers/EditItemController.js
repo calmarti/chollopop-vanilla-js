@@ -41,8 +41,6 @@ export default class EditItemController {
                     const picture = data.get('picture') 
                     
                     
-                    
-                    //TODO: arreglar, no se muestra el loader al hacer la petición!
                     PubSub.publish(PubSub.events.SHOW_LOADER)   
 
                     const result = await DataService.editItem(itemId, name, price, buyorsale, tag, picture)  

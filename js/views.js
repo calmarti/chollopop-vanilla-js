@@ -100,7 +100,7 @@ export function itemDetailView(item) {
 
 export function navbarView() {
   return `
-    <a class="navbar-brand" href="#">Logo de Chollopop</a>
+    <a class="navbar-brand" href="/">Logo de Chollopop</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -129,7 +129,7 @@ export function navbarView() {
                     <option value="Oficina">Oficina</option>
                     <option value="Ropa y calzado">Ropa y calzado</option>
                     <option value="Móviles">Móviles</option>
-                    <option value="Informática y electrónica">Informática</option>
+                    <option value="Informática y electrónica">Informática y electrónica</option>
                     <option value="Entretenimiento">Entretenimiento</option>
                     <option value="Otros">Otros</option>
                   </select>

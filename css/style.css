@@ -43,6 +43,10 @@ body {
   z-index:30;
 }
 
+.loader-container {
+  z-index:30;
+}
+
 div#container-wrapper {
   position:relative;
   
