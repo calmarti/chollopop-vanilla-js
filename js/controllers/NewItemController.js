@@ -1,14 +1,14 @@
 import PubSub from "../services/PubSub.js"
 import DataService from "../services/DataService.js"
 
-export default class newItemController {
+export default class NewItemController {
 
     constructor(element) {
         this.element = element
         this.attachEventListeners()
     }
 
-    //TODO: poner primera letra de newItemController en mayúsculas en el nombre y en sus imports e invocaciones!
+   
     //TODO: validar el campo precio como número
     //TODO: validar el campo foto como una URL 
 

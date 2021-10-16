@@ -11,7 +11,7 @@ export default class EditItemController {
 
     }
 
-    //me traigo datos del anuncio del DataService y los mento en los placeholders del form del html 
+   
 
     async showOldDataInEditForm(itemId) {
        const oldData = await DataService.getItemDetail(itemId)
@@ -36,7 +36,6 @@ export default class EditItemController {
                     const name = data.get('name')
                     const price = data.get('price')
                     const buyorsale = data.get('buyorsale')
-                    console.log(buyorsale)
                     const tag = data.get('tag')
                     const picture = data.get('picture') 
                     

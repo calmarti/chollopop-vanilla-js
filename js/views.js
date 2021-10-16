@@ -128,8 +128,8 @@ export function navbarView() {
                     <option value="Hogar">Hogar</option>
                     <option value="Oficina">Oficina</option>
                     <option value="Ropa y calzado">Ropa y calzado</option>
-                    <option value="Móviles">Móviles</option>
-                    <option value="Informática y electrónica">Informática y electrónica</option>
+                    <option value="Moviles">Móviles</option>
+                    <option value="Informatica y electronica">Informática y electrónica</option>
                     <option value="Entretenimiento">Entretenimiento</option>
                     <option value="Otros">Otros</option>
                   </select>

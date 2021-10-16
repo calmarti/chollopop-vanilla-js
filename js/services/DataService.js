@@ -24,7 +24,7 @@ export default {
 
         try {
 
-            let parsedResponse = await response.json()   //forzar un error al parsear 
+            let parsedResponse = await response.json()   //forzar un error al parsear el json
 
 
             if (response.ok) {
@@ -35,27 +35,13 @@ export default {
                 return null
             }
 
-/*              else if (response.status === 404) {
-
-            const id = new URLSearchParams(window.location.search).get('id')
-                if (id) {
-                    parsedResponse['empty'] = true
-                    return parsedResponse
-                }
-                else {
-                    throw `${response.statusText}`
-                }  
-            }*/
-
             else {
-                throw `${response.statusText}`
+                 throw parsedResponse
             } 
 
-
-        }
-        catch (error) {
-            console.log(error)
-            throw error
+       }
+        catch (errorResponse) {
+            throw parsedResponse.message
         }
 
 
@@ -144,9 +130,6 @@ export default {
     },
         
      
-        
-      
-        
            
 
     isItemCreator: function (item) {            //mover o refactorizar en función de creación de anuncio

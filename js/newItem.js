@@ -1,6 +1,6 @@
 import MessageController from './controllers/MessageController.js'
 import LoaderController from './controllers/LoaderController.js'
-import newItemController from './controllers/newItemController.js'
+import NewItemController from './controllers/NewItemController.js'
 import DataService from './services/DataService.js'
 import PubSub from './services/PubSub.js'
 import NavbarController from "./controllers/NavbarController.js"
@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
     const form = document.querySelector('form#newitem')
-    new newItemController(form)
+    new NewItemController(form)
 
 
 

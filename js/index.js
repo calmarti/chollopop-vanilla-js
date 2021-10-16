@@ -13,8 +13,6 @@ import FilterController from "./controllers/FilterController.js"
 
 //TODO: Decidir si meto o no validación de minlength en campo contraseña y decidir validación de price como número
 
-//TODO: VOLVER A LEER EL ENUNCIADO por si me he dejado algo!
-
 //TODO: para el README:
 //en general, meter los cabos sueltos para dejar constancia que soy consciente de ellos
 //aclarar que tanto en login como en signup el loader solo se muestra al refrescar, no al aterrizar desde el home (u otra pág) 
