@@ -1,6 +1,6 @@
 # Frontend de tienda de artículos de segunda mano 'Chollopop'
 
-Este proyecto simula el frontend de una web de artículos de segunda mao utilizando únicamente html, css y vanilla javascript 
+Este proyecto simula el frontend de una web de artículos de segunda mano utilizando únicamente HTML, CSS y vanilla Javascript 
 
 ---
 
