@@ -10,13 +10,13 @@ export default class FilterController {
 
     attachEventListeners(){
         this.element.addEventListener('change', ()=> {
-            //console.log(this.element.value)
             PubSub.publish(PubSub.events.FILTER, this.element.value)
 
         })
     }
-
-
-
-
 }
+
+
+
+
+        

@@ -7,12 +7,13 @@ import DataService from "./services/DataService.js"
 import FilterController from "./controllers/FilterController.js"
 
 
-//TODO: signup: arreglar tema del newline
-
 
 //TODO: asegurarse de que los values de los tags son idénticos (inicial en mayúsculas) tanto en el dB.json, como en el HTML como en el resto del código.
 
-//TODO: limpiar todo el código (¡no ser exhaustivo!)
+//TODO: limpiar resto del código y del db.json
+
+//TODO: no olvidar meter el db.json en la raiz de la aplicación al subir al repo!
+
 
 
 window.addEventListener('DOMContentLoaded', () => {

@@ -2,40 +2,52 @@
 
 Este proyecto simula el frontend de una web de artículos de segunda mao utilizando únicamente html, css y vanilla javascript 
 
+---
+
+**Estilos CSS utilizados**
+
+Bootstrap 5.1.3
+
+Otros estilos en el fichero **style.css**
+
+---
+
 **Requisitos**
 
-Se asume la instalación previa de node y sparrest.js:
+Se asume la instalación previa de:
+
+-Node
+
+-Sparrest.js:
 
 ```
 https://github.com/kasappeal/sparrest
 ```
+---
 
 **Iniciar la aplicación**
 
 Copiar el fichero **db.json** en la raiz del directorio donde se encuentra instalado sparrest.js
 
-Arrancar el simulador de backend en el puerto 8000:
+Desde una consola de comandos arrancar el simulador de backend en el puerto 8000:
 
 ```
 npm start
 ```
 
-Abrir el navegador en: 
+Abrir un navegador en: 
 ```
 http://127.0.0.1:3000
 ```
-
-**Estilos CSS**
-
-Bootstrap 5.1.3
+---
 
 ### Notas de interés ###
 
 **Estado de carga:** 
 
-En las páginas de login y registro el estado de carga corresponde al envío de datos al backend. 
+En las páginas de login y registro el estado de carga corresponde al momento en que se envían los datos al backend. 
 
-En ambas páginas se intentó incluir en esta definición la carga de la página en sí, pero no fue posible. 
+En ambas páginas se intentó extender esta definición a la carga de la página en sí, pero no fue posible. 
 
 **Creación de un anuncio**
 
@@ -56,3 +68,6 @@ El filtro por tags o categorías fue implementado con un elemento *select* en la
 
 El script ```bootstrap.bundle.min.js``` está incluido pero "comentado" para evitar una posible interferencia con el código javascript de la aplicación. 
 
+**Campos vacíos al crear o editar un anuncio**
+
+La variable string con el mensaje de error al dejar varios campos vacíos no reconoce el caracter de salto de línea ```\n```. 

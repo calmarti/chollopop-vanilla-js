@@ -50,7 +50,7 @@ export default class NewItemController {
                 for (const control of controlsArray) {
                     if (control.validity.valueMissing) {
                         
-                        message += `El campo ${control.name} es obligatorio`
+                        message += `El campo ${control.name} es obligatorio \n`
                                                                                                         
                     }
                     

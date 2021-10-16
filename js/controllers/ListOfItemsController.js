@@ -1,4 +1,4 @@
-import { itemView } from '../views.js';
+import { itemView, paginationBarView } from '../views.js';
 import DataService from '../services/DataService.js';
 import PubSub from '../services/PubSub.js'
 
@@ -7,6 +7,7 @@ export default class ListOfItemsController {
     constructor(element,page) {
         this.element = element
         this.renderListOfItems(page)
+        
         
 
         PubSub.subscribe(PubSub.events.SEARCH, (keyword) => {
@@ -34,17 +35,25 @@ export default class ListOfItemsController {
                 htmlContent = itemView(item);
                 this.element.innerHTML += htmlContent
             }
-
+            
+            
         } catch (error) {
             PubSub.publish(PubSub.events.SHOW_ERROR, error.message)
-
+            
         } finally {
+            this.renderPaginationBar()
             PubSub.publish(PubSub.events.HIDE_LOADER)
         }
+        
+    }
+    
 
+    renderPaginationBar(){
+        const bar = document.querySelector('.pagination-bar')
+        bar.innerHTML = paginationBarView()
     }
 
-
+    
    
     async handleSearchEvent(keyword) {
         this.element.innerHTML = ''

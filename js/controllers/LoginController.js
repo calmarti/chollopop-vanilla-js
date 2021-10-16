@@ -8,6 +8,7 @@ export default class LoginController {
 
 
     }
+    
     attachSubmitEventListener() {
         this.element.addEventListener('submit', async event => {
             event.preventDefault()
@@ -34,8 +35,8 @@ export default class LoginController {
                 PubSub.publish(PubSub.events.SHOW_ERROR, 'Debes llenar ambos campos')
             }
         })
-
     }
-
-
 }
+
+
+
