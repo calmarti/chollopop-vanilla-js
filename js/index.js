@@ -16,7 +16,7 @@ import FilterController from "./controllers/FilterController.js"
 //aclarar que tanto en login como en signup el loader solo se muestra al refrescar, no al aterrizar desde el home (u otra pág) 
 //aclarar que al crear un anuncio el botón se desabilita para repetir el mismo post, por tanto hay que refrescar la pág para crear otro anuncio.
 //Decir cuales fueron los opcionales que logré hacer (sin usar esa palabra) y el alcance que tienen (por ej, la paginación de first, last, prev, next solo está maquetada pero no hecha)
-
+//decir que solo tengo el bundle css de bootstrap y que el script bundole min js de bootstrap está comentado y debería funcionar
 //TODO: asegurarse de que los values de los tags son idénticos (inicial en mayúsculas) tanto en el dB.json, como en el HTML como en el resto del código.
 
 //TODO: limpiar todo el código (¡no ser exhaustivo!)

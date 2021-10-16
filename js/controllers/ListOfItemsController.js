@@ -1,4 +1,4 @@
-import { itemView , /* paginationView  */} from '../views.js';
+import { itemView } from '../views.js';
 import DataService from '../services/DataService.js';
 import PubSub from '../services/PubSub.js'
 
@@ -6,7 +6,6 @@ export default class ListOfItemsController {
 
     constructor(element,page) {
         this.element = element
-        //console.log('desde el constructor', page)
         this.renderListOfItems(page)
         
 
@@ -20,8 +19,6 @@ export default class ListOfItemsController {
     
     }
 
-    //TODO: refactorizar renderListofItems (cambiar nombre): separar la obtención de datos del server del renderizado
-
     async renderListOfItems(page) {
 
         PubSub.publish(PubSub.events.SHOW_LOADER)
@@ -30,7 +27,7 @@ export default class ListOfItemsController {
         try {
             const items = await DataService.getListOfItems(page)
             if (items.length === 0) {
-                return PubSub.publish(PubSub.events.HOME_EMPTY, 'Lo siento, no existe ningún anuncio por ahora') //probar con Db.json
+                return PubSub.publish(PubSub.events.HOME_EMPTY, 'Lo siento, no existe ningún anuncio por ahora') 
             }
             let htmlContent = ''
             for (const item of items) {
@@ -47,11 +44,6 @@ export default class ListOfItemsController {
 
     }
 
-/*     renderPaginationBar(){
-        const bar = this.element.querySelector('.pagination-bar')
-        bar.innerHTML = paginationView()
-
-    } */
 
    
     async handleSearchEvent(keyword) {
@@ -72,7 +64,6 @@ export default class ListOfItemsController {
     }
 
     async handleFilterEvent(tag){
-        //console.log(tag)
         if (tag===''){
             this.renderListOfItems()
         }

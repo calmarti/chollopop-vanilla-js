@@ -4,12 +4,12 @@ const hOP = topics.hasOwnProperty;
 export default {
 
   events: {
+    SHOW_LOADER: 'SHOW_LOADER',
+    HIDE_LOADER: 'HIDE_LOADER',
     SHOW_SUCCESS: 'SHOW_SUCCESS',
     SHOW_ERROR: 'SHOW_ERROR',
     HOME_EMPTY: 'HOME_EMPTY',
     DETAIL_EMPTY: 'DETAIL_EMPTY',
-    SHOW_LOADER: 'SHOW_LOADER',
-    HIDE_LOADER: 'HIDE_LOADER',
     SEARCH: 'SEARCH',
     FILTER: 'FILTER',
   },

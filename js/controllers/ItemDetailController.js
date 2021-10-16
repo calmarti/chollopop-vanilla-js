@@ -10,7 +10,6 @@ export default class ItemDetailController {
     }
 
 
-    //TODO: publicar eventos de éxito al editar y al borrar y luego crear para botón redirigir ?
     addEditFeature(itemId) {
         const button = this.element.querySelector('.edit-button')
         if (button) {
@@ -26,7 +25,7 @@ export default class ItemDetailController {
         const button = this.element.querySelector('.delete-button')
         if (button) {
             button.addEventListener('click', async () => {
-                //TODO: mensaje de confirmación al usuario antes de borrar el anuncio, usar un modal de Bootstrap o algo así
+                
                 const answer = window.confirm('¿Seguro que quieres borrar el anuncio?')
                 if (answer===true){
                     try{

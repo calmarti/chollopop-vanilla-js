@@ -3,11 +3,6 @@ import PubSub from "../services/PubSub.js"
 
 export default class SignUpController {
 
-
-    //TODO: set custom validation para el campo password con 'pattern' (regex)
-    //TODO: arreglar posible conflicto entre validación de igualdad de contraseñas y el minlength (¿usar setCustomValidity?)
-    //TODO: no muestra el error de 'username taken' sino un error genérico 400 de 'bad request'
-
     constructor(element) {
 
         this.element = element
@@ -65,7 +60,6 @@ export default class SignUpController {
         this.element.addEventListener('submit', async event => {
             event.preventDefault()
 
-            //hacer todas las validaciones necesarias
             if (this.element.checkValidity()) {
                 try {
                     const username = this.element.querySelector('input[name="username"]').value
@@ -76,7 +70,6 @@ export default class SignUpController {
                     await DataService.registerUser(username, password)
 
                     PubSub.publish(PubSub.events.SHOW_SUCCESS, 'Registrado con éxito')
-
 
                 }
                 catch (error) {
@@ -91,7 +84,7 @@ export default class SignUpController {
                 let message = ''
                 Array.from(this.element.elements).forEach(control => {
                     if (control.validity.valid === false) {
-                        message += `${control.name}: ${control.validationMessage}`    
+                        message += `${control.name}: ${control.validationMessage}`
                     }
                 })
 

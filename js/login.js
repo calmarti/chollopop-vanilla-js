@@ -6,27 +6,29 @@ import NavbarController from "./controllers/NavbarController.js"
 import DataService from "./services/DataService.js"
 
 
-window.addEventListener('beforeunload', function() {
+
+window.addEventListener('DOMContentLoaded', function() {
     const loader = document.querySelector('.loader-container')
     new LoaderController(loader)
     PubSub.publish(PubSub.events.SHOW_LOADER)
-}) 
 
-
-window.addEventListener('DOMContentLoaded', function() {
-    PubSub.publish(PubSub.events.HIDE_LOADER)
     const navbar = document.querySelector('.navbar')     //TODO: al meter navbar ya el login no devuelve el token ni redirige al index 
     const navbarController = new NavbarController(navbar)  
     navbarController.hideButtons()
     navbarController.disableSearchBox()
     navbarController.hideFilterMenu()
-      
+    
     const messageDiv = document.querySelector('.message-container')
     new MessageController(messageDiv)
-
+    
     const form = document.querySelector('form#login')
     new LoginController(form)
-
+    
+   
 })
 
     
+window.addEventListener('load', function(){
+    PubSub.publish(PubSub.events.HIDE_LOADER)
+
+})

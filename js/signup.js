@@ -5,15 +5,16 @@ import SignUpController from './controllers/SignUpController.js'
 import NavbarController from "./controllers/NavbarController.js"
 
 
-window.addEventListener('beforeunload', function() {
+
+
+
+window.addEventListener('DOMContentLoaded', function(){
+
     const loader = document.querySelector('.loader-container')
     new LoaderController(loader)
     PubSub.publish(PubSub.events.SHOW_LOADER)
-}) 
 
-window.addEventListener('DOMContentLoaded', function(){
-    PubSub.publish(PubSub.events.HIDE_LOADER)
-    
+       
     const navbar = document.querySelector('.navbar')
     const navbarController = new NavbarController(navbar) 
     navbarController.hideSecondButton()
@@ -25,5 +26,10 @@ window.addEventListener('DOMContentLoaded', function(){
 
     const form = document.querySelector('form#signup')
     new SignUpController(form)
+
+    })
+
+window.addEventListener('load', function(){
+    PubSub.publish(PubSub.events.HIDE_LOADER)
 
 })

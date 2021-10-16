@@ -8,10 +8,6 @@ export default class NewItemController {
         this.attachEventListeners()
     }
 
-   
-    //TODO: validar el campo precio como número
-    //TODO: validar el campo foto como una URL 
-
     attachEventListeners() {
         this.element.addEventListener('submit', async event => {
             event.preventDefault()
@@ -29,16 +25,15 @@ export default class NewItemController {
                     const tag = data.get('tag')
                     const picture = data.get('picture')
                     
-                    //console.log(itemData)
+                  
 
                     PubSub.publish(PubSub.events.SHOW_LOADER)   
-                    const result = await DataService.postNewItem(name, price, buyorsale, tag, picture)   //probar a eliminar el 'result' dejando solo la ejecución del await
+                    const result = await DataService.postNewItem(name, price, buyorsale, tag, picture)   
                     
                     this.element.querySelector('.create-item').setAttribute('disabled', 'disabled')
 
                     PubSub.publish(PubSub.events.SHOW_SUCCESS, 'Tu anuncio ha sido creado')
-                    //TODO: gestionar el evento click de 'Close': refresca la página (aquí o bien en MessageController)
-              
+                               
                 }
                 catch (error) {
                     PubSub.publish(PubSub.events.SHOW_ERROR, error)
