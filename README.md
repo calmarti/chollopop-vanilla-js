@@ -59,7 +59,8 @@ En ambas páginas se intentó extender esta definición a la carga de la página
 
 **Creación de un anuncio**
 
-Tras la creación de un anuncio se desactiva el botón (submit) para evitar repetir la misma petición. Por tanto, para crear un segundo anuncio es necesario refrescar la página. 
+Tras la creación de un anuncio se desactiva el botón (submit) para evitar repetir la misma petición. 
+Por tanto, para crear un segundo anuncio es necesario refrescar la página. 
 
 
 **Paginación**
