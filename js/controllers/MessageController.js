@@ -20,9 +20,11 @@ export default class MessageController{
             this.detailEmpty(message)
         })
 
+
     }
     
-    attachCloseButtonListener(button){
+    attachCloseButtonListener(){
+        const button = this.element.querySelector('button')
         button.addEventListener('click', () => {
             this.element.innerHTML = ''
         })
@@ -31,28 +33,23 @@ export default class MessageController{
     
     showError(error){
         this.element.innerHTML = errorView(error)
-        const button = this.element.querySelector('button')
-        this.attachCloseButtonListener(button)
+        this.attachCloseButtonListener()
     }
         
      
     showSuccess(success){
         this.element.innerHTML = successView(success)
-        const button = this.element.querySelector('button')
-        this.attachCloseButtonListener(button)
+        this.attachCloseButtonListener()
     }
 
     homeEmpty(message){
         this.element.innerHTML = homeEmptyView(message)
-        const button = this.element.querySelector('button')
-        this.attachCloseButtonListener(button)
+        this.attachCloseButtonListener()
     }
         
     detailEmpty(message){                
         this.element.innerHTML = detailEmptyView(message)
-        const button = this.element.querySelector('button')
-        this.attachCloseButtonListener(button)
+        this.attachCloseButtonListener()
     }
-
 
 }

@@ -24,7 +24,7 @@ export default {
 
         try {
 
-            let parsedResponse = await response.json()   //forzar un error al parsear el json
+            let parsedResponse = await response.json()   
 
 
             if (response.ok) {
@@ -40,7 +40,7 @@ export default {
             } 
 
        }
-        catch (errorResponse) {
+        catch (parsedResponse) {
             throw parsedResponse.message
         }
 
@@ -48,10 +48,8 @@ export default {
     },
 
     getListOfItems: async function (page) {
-        //const url = 'https://gambarmobil.com/foto/bmw/239955-3-series-bmw-f30-320i-lci-2017-last-model-0faab85f-bcb2-4086-a372-0610a900453a.jpeg'
         const url = `http://127.0.0.1:8000/api/items?_page=${page}&_limit=9`
         const parsedResponse = await this.request(url)
-        //console.log(parsedResponse)        
         return parsedResponse
 
     },
@@ -61,7 +59,7 @@ export default {
         return await this.request(url, 'GET')
     },
 
-    registerUser: async function (username, password) {       //probar con 'arrow-function' para saber a quien asignaría el 'this' 
+    registerUser: async function (username, password) {       
         const url = 'http://127.0.0.1:8000/auth/register'
         return await this.request(url, 'POST', { username, password })
 
@@ -87,7 +85,6 @@ export default {
 
 
     editItem: async function (itemId, name, price, buyorsale, tag, picture) {
-        //console.log('parametros de editItem:', itemId, name, price, buysale, picture)
         const url = `http://127.0.0.1:8000/api/items/${itemId}`
         return await this.request(url, 'PUT', { name, price, buyorsale, tag, picture })
     },
@@ -107,13 +104,12 @@ export default {
         else {
             try {
                 const payload = JSON.parse(atob(token.split('.')[1]))
-                //console.log(payload)
                 return payload.userId
             } catch (error) {
                 throw error
             }
         }
-    },
+    },         
 
     escapeHTML(body) {      
                  
@@ -129,10 +125,8 @@ export default {
         return body       
     },
         
-     
-           
-
-    isItemCreator: function (item) {            //mover o refactorizar en función de creación de anuncio
+    
+    isItemCreator: function (item) {            
     item.isItemCreator = this.parseToken() === item.userId 
         
     
@@ -149,12 +143,6 @@ export default {
         return this.request(url)
 
     }, 
-
-/*     paginateItems: function(){
-        const url = `http://127.0.0.1:8000/api/items?page=${page}`
-        return this.request(url)
-    } */
-
 
 
 }

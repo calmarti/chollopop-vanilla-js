@@ -7,11 +7,9 @@ import DataService from "./services/DataService.js"
 import FilterController from "./controllers/FilterController.js"
 
 
-//TODO: Crear el json con 30 - 40 artículos con todos sus campos llenos, ponerle el atributo userId a todos los anuncios por defecto (dejar un usuario 'ivan' y asignarle todos los anuncios)
+//TODO: signup: arreglar tema del newline
+//TODO: intentar el reportValidity en campo pasword (minlength) de signup y campo numérico en newitem y ediitem
 
-//TODO: Intentar que arroje en login: "Wrong user/password" en lugar de  "Unauthorized" y en signup: "Bad request" en vez de "Username taken"
-
-//TODO: Decidir si meto o no validación de minlength en campo contraseña y decidir validación de price como número
 
 //TODO: para el README:
 //en general, meter los cabos sueltos para dejar constancia que soy consciente de ellos

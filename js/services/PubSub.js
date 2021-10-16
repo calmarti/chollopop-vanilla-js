@@ -11,7 +11,7 @@ export default {
     SHOW_LOADER: 'SHOW_LOADER',
     HIDE_LOADER: 'HIDE_LOADER',
     SEARCH: 'SEARCH',
-    FILTER: 'FILTER'
+    FILTER: 'FILTER',
   },
 
   subscribe: function (topic, listener) {

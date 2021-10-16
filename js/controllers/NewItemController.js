@@ -54,9 +54,12 @@ export default class NewItemController {
                 let message = ''
                 for (const control of controlsArray) {
                     if (control.validity.valueMissing) {
-                        message += `El campo ${control.name} es obligatorio\n`   //no escribe las newlines                                          
+                        
+                        message += `El campo ${control.name} es obligatorio`
+                                                                                                        
                     }
-                PubSub.publish(PubSub.events.SHOW_ERROR, message)    
+                    
+                    PubSub.publish(PubSub.events.SHOW_ERROR, message)    
                 }
             }
         })
