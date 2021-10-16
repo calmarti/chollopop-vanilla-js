@@ -1,0 +1,318 @@
+{
+    "users": [
+        {
+            "username": "ivan",
+            "password": "$2b$10$7TC4jZ0m.5nKRSgYmRwhTOozhMhY2jpHcmjeWu9NDzcMVHD6Pbj/O",
+            "id": 1
+        }
+    ],
+    
+    "items": [
+        {
+            "id": 1,
+            "name": "Camiseta Adidas",
+            "price": 33,
+            "buyorsale": "Venta",
+            "picture": "http://chemasport.es/8415-thickbox_default/camiseta-adidas-boyfriend-trefoil-tee-negro.jpg",
+            "tag": "Ropa y calzado",
+            "userId": 1
+        },
+        {
+            "id": 2,
+            "name": "Chaqueta de cuero Gucci",
+            "price": "47",
+            "buyorsale": "Compra",
+            "tag": "Ropa y calzado",
+            "picture": "https://bestforless.es/26898-medium_default/chaqueta-cuero6462.jpg",
+            "userId": 1
+        },
+        {
+            "id": 3,
+            "name": "Iphone X",
+            "price": "500",
+            "buyorsale": "Venta",
+            "picture": "https://www.unp.me/images/cache/2017/09/iPhoneX-1.jpg",
+            "tag": "Moviles",
+            "userId": 1
+        },
+        {
+            "id": 4,
+            "name": "Zapatillas Nike",
+            "price": 49,
+            "buyorsale": "Venta",
+            "picture": "https://scorer.es/30505-thickbox_default/zapatilla-nike-hyperdunk-x.jpg",
+            "tag": "Ropa y calzado",
+            "userId": 1
+        },
+        {
+            "id": 5,
+            "name": "Macbook Pro",
+            "price": "528",
+            "buyorsale": "Compra",
+            "tag": "Informatica y electronica",
+            "picture": "https://www.imore.com/sites/imore.com/files/styles/large/public/field/image/2016/10/2016-macbook-pro-lite-table-hero.jpg?itok=AHxkOmnG",
+            "userId": 1
+        },
+        {
+            "id": 6,
+            "name": "Camiseta Celta de Vigo",
+            "price": 48,
+            "buyorsale": "Compra",
+            "picture": "https://www.futbolemotion.com/imagesarticulos/150462/540/camiseta-adidas-rc-celta-de-vigo-primera-equipacion-2020-2021-cyan-0.jpg",
+            "tag": "Ropa y calzado",
+            "userId": 1
+        },
+        {
+            "id": 7,
+            "name": "Mesa de Noche IKEA",
+            "price": 29,
+            "buyorsale": "Compra",
+            "picture": "https://d15kx7sft32rtl.cloudfront.net/imagenes_articulosweb/502196090143743_PE303246_S5.JPG?v=10",
+            "tag": "Hogar",
+            "userId": 1
+        },
+        {
+            "id": 8,
+            "name": "Candado de latón sólido",
+            "price": 16,
+            "buyorsale": "Venta",
+            "tag": "Otros",
+            "picture": "https://image.made-in-china.com/2f0j10UKqafCRGuYol/-China-Candados-de-lat-n-s-lido.jpg",
+            "userId": 1
+        },
+        {
+            "id": 9,
+            "name": "Boligrafo Palmer",
+            "price": "77",
+            "buyorsale": "Compra",
+            "tag": "Oficina",
+            "picture": "https://www.compranet.com.co/23590-layout3_home_default/esfero-boligrafo-palmer-stylus-con-mecanismo-twist-negro.jpg",
+            "userId": 1
+        },
+        {
+            "id": 10,
+            "name": "Vaqueros Levis",
+            "price": 190,
+            "buyorsale": "Compra",
+            "picture": "https://www.brother2brother.co.uk/images/levis-junior-mid-wash-511-slim-fit-jeans-p12687-30666_image.jpg",
+            "tag": "Ropa y calzado",
+            "userId": 1
+        },
+        {
+            "id": 11,
+            "name": "Paraguas antiviento",
+            "price": "16",
+            "buyorsale": "Venta",
+            "picture": "https://heilk.com/wp-content/uploads/2018/06/paraguas-plegable.jpg",
+            "tag": "Otros",
+            "userId": 1
+        },
+        {
+            "id": 12,
+            "name": "Poncho Pull&Bear",
+            "price": "11,9",
+            "buyorsale": "Venta",
+            "picture": "https://item5.tradesy.com/images/pull-and-bear-sweater-22464934-2-0.jpg?width=720&height=960",
+            "tag": "Ropa y Calzado",
+            "userId": 1
+        },
+        {
+            "id": 13,
+            "name": "Vestido Bershka",
+            "price": "65",
+            "buyorsale": "Venta",
+            "tag": "Ropa y calzado",
+            "picture": "http://1.bp.blogspot.com/-OSDpqyreh3o/Taeu8NqXGwI/AAAAAAAARnk/_PKCzkSTe9g/s1600/205743_10150143533515936_53133370935_6905029_8293343_n.jpg",
+            "userId": 1
+        },
+        {
+            "id": 14,
+            "name": "Cuchillos de cocina",
+            "price": "24",
+            "buyorsale": "Venta",
+            "picture": "https://ae01.alicdn.com/kf/HTB1boDxn29TBuNjy1zbq6xpepXan/Sunnecko-New-4pcs-5-Steak-Knives-73-Layers-Damascus-Steel-Japanese-VG10-Blade-Kitchen-Knife-H10.jpg",
+            "tag": "Hogar",
+            "userId": 1
+        },
+        {
+            "id": 15,
+            "name": "Guitarra Fender",
+            "price": "316",
+            "buyorsale": "Compra",
+            "picture": "https://www.pronorte.es/_files/product/17669/gallery1/guitarra-electrica-fender-player-stratocaster-pf-agn-1.jpg",
+            "tag": "Otros",
+            "userId": 1
+        },
+        {
+            "id": 16,
+            "name": "Silla ergonomica",
+            "price": "29",
+            "buyorsale": "Compra",
+            "picture": "https://www.consejosparamihuerto.com/wp-content/uploads/2020/02/sillas-ergonomicas-ordenador.jpg",
+            "tag": "Oficina",
+            "userId": 1
+        },
+        {
+            "id": 17,
+            "name": "IPad",
+            "price": "299",
+            "buyorsale": "Venta",
+            "picture": "https://www.slashgear.com/wp-content/uploads/2018/10/apple-ipad-pro-2018-0-980x620.jpg",
+            "tag": "Informatica y electronica",
+            "userId": 1
+        },
+        {
+            "id": 18,
+            "name": "Cama de madera Ikea",
+            "price": "64",
+            "buyorsale": "Venta",
+            "picture": "http://www.valverde.ind.br/assets/imagens/produtos/ec6d3e232babe35562e9332229d4df3c.jpg",
+            "tag": "Hogar",
+            "userId": 1
+        },
+        {
+            "id": 19,
+            "name": "Camiseta del Atlético de Madrid",
+            "price": "49",
+            "buyorsale": "Compra",
+            "picture": "https://www.futbolemotion.com/imagesarticulos/120916/grandes/camiseta-nike-atletico-de-madrid-stadium-primera-equipacion-2018-2019-nino-sport-red-white-deep-royal-blue-0.jpg",
+            "tag": "Ropa y calzado",
+            "userId": 1
+        },
+        {
+            "id": 20,
+            "name": "Traje Tuxedo",
+            "price": "210",
+            "buyorsale": "Compra",
+            "picture": "https://cdn.optipic.io/site-2218/images/suits/italsilkterinatuxedosuit.jpg",
+            "tag": "Ropa y calzado",
+            "userId": 1
+        },
+        {
+            "id": 21,
+            "name": "IPod",
+            "price": "77",
+            "buyorsale": "Compra",
+            "picture": "https://images.unsplash.com/photo-1617464985170-8d97d2efd6d4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aXBvZHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
+            "tag": "Informatica y electronica",
+            "userId": 1
+        },
+        {
+            "id": 22,
+            "name": "Picadora eléctrica de carne",
+            "price": "25",
+            "buyorsale": "Compra",
+            "picture": "https://cocinista-vsf.netdna-ssl.com/download/bancorecursos/productos2/11086-picadora-%20electrica-de-carne.jpg",
+            "tag": "Hogar",
+            "userId": 1
+        },
+        {
+            "id": 23,
+            "name": "XBox 360",
+            "price": "290",
+            "buyorsale": "Venta",
+            "tag": "Entretenimiento",
+            "picture": "https://m.media-amazon.com/images/I/518SBykiJaL._AC_SX450_.jpg",
+            "userId": 1
+        },
+        {
+            "id": 24,
+            "name": "Samsung Galaxy S+20",
+            "price": "274",
+            "buyorsale": "Venta",
+            "picture": "https://i.blogs.es/4623b2/s20-ultra/1366_2000.jpg",
+            "tag": "Moviles",
+            "userId": 1
+        },
+        {
+            "id": 25,
+            "name": "Xiaomi Mi 11",
+            "price": "274",
+            "buyorsale": "Venta",
+            "picture": "https://priceinsouthafrica.com/wp-content/uploads/2021/03/Xiaomi-Mi-11-Ultra-Price-in-South-Africa-1024x1022.jpg",
+            "tag": "Moviles",
+            "userId": 1
+        },
+        {
+            "id": 26,
+            "name": "Gafas de realidad virtual",
+            "price": "520",
+            "buyorsale": "Venta",
+            "picture": "https://www.electroya.com/wp-content/uploads/2016/11/vrbox-03.jpg",
+            "tag": "Entretenimiento",
+            "userId": 1
+        },
+        {
+            "id": 27,
+            "name": "Desktop Dell",
+            "price": "417",
+            "buyorsale": "Venta",
+            "tag": "Informatica y electronica",
+            "picture": "https://i5.walmartimages.com/asr/20c2da98-23b6-42c0-99ff-3719a352c2a8_1.d7738944df20f5cd082a4c5d826986b0.jpeg",
+            "userId": 1
+        },
+        {
+            "id": 28,
+            "name": "Auriculares Sony",
+            "price": "174",
+            "buyorsale": "Compra",
+            "picture": "https://www.tiendaazul.com/1266961-thickbox_default/auriculares-sony-mdrzx310apl-azul-con-micro.jpg",
+            "tag": "Informatica y electronica",
+            "userId": 1
+        },
+        {
+            "id": 29,
+            "name": "Cable USB",
+            "price": "19",
+            "buyorsale": "Compra",
+            "picture": "https://cdn.shopify.com/s/files/1/1920/0265/products/usb-cable-6-ft_1024x1024.jpeg?v=1497365150",
+            "tag": "Informatica y electronica",
+            "userId": 1
+        },
+        {
+            "id": 30,
+            "name": "Maletín ejecutivo",
+            "price": "19",
+            "buyorsale": "Compra",
+            "picture": "https://tusmaletas.net/wp-content/uploads/2019/04/21-2.jpg",
+            "tag": "Oficina",
+            "userId": 1
+        },
+        {
+            "id": 31,
+            "name": "Televisor LED Samsung",
+            "price": "138",
+            "buyorsale": "Compra",
+            "picture": "https://i.blogs.es/57cf85/xiaomimitvp1ap/1366_2000.jpg",
+            "tag": "Entretenimiento",
+            "userId": 1
+        },
+        {
+            "id": 32,
+            "name": "Ajedrez (tablero y piezas)",
+            "price": "53",
+            "buyorsale": "Compra",
+            "picture": "https://images.ecestaticos.com/JC0GiXI3LZPocoberRy9NuWyK9g=/0x126:998x658/640x360/filters:fill(white):format(jpg)/https://f.elconfidencial.com/original/0cd/0b9/bc3/0cd0b9bc336f06009ab7f2accf50c186.jpg",
+            "tag": "Entretenimiento",
+            "userId": 1
+        },
+        {
+            "id": 33,
+            "name": "Pixel 5",
+            "price": "188",
+            "buyorsale": "Venta",
+            "tag": "Moviles",
+            "picture": "https://s.yimg.com/os/creatr-uploaded-images/2020-10/f0cf0150-0db2-11eb-bfff-5b0176edfdf4",
+            "userId": 1
+        },
+        {
+            "id": 34,
+            "name": "Escritorio y silla",
+            "price": "264",
+            "buyorsale": "Venta",
+            "picture": "https://officinca.es/1379-large_default/mesa-de-oficina-euro-2000.jpg",
+            "tag": "Oficina",
+            "userId": 1
+        }
+    ]
+}

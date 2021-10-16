@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', function() {
     new LoaderController(loader)
     PubSub.publish(PubSub.events.SHOW_LOADER)
 
-    const navbar = document.querySelector('.navbar')     //TODO: al meter navbar ya el login no devuelve el token ni redirige al index 
+    const navbar = document.querySelector('.navbar')    
     const navbarController = new NavbarController(navbar)  
     navbarController.hideButtons()
     navbarController.disableSearchBox()

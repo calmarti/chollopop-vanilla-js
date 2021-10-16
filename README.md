@@ -43,6 +43,14 @@ http://127.0.0.1:3000
 
 ### Notas de interés ###
 
+**Login**
+
+Para modificar o borrar algún anuncio **ya existente** de la lista en db.json debe accederse con el usuario por defecto: 
+```
+username: ivan, password: 123
+```
+También puede crear un nuevo usuario, iniciar sesión, crear un anuncio nuevo y finalmente modificarlo o borrarlo. 
+
 **Estado de carga:** 
 
 En las páginas de login y registro el estado de carga corresponde al momento en que se envían los datos al backend. 

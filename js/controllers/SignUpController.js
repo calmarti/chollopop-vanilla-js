@@ -33,7 +33,6 @@ export default class SignUpController {
         passwordControls.forEach(control => {
             control.addEventListener('input', control => {
                 let passwords = []
-
                 for (control of passwordControls) {
 
                     if (!passwords.includes(control.value)) {
@@ -65,12 +64,9 @@ export default class SignUpController {
                     const username = this.element.querySelector('input[name="username"]').value
                     const password = this.element.querySelector('input[name="password"]').value
 
-
                     PubSub.publish(PubSub.events.SHOW_LOADER)
                     await DataService.registerUser(username, password)
-
                     PubSub.publish(PubSub.events.SHOW_SUCCESS, 'Registrado con éxito')
-
                 }
                 catch (error) {
                     PubSub.publish(PubSub.events.SHOW_ERROR, error)
@@ -80,7 +76,6 @@ export default class SignUpController {
                 }
             }
             else {
-
                 let message = ''
                 Array.from(this.element.elements).forEach(control => {
                     if (control.validity.valid === false) {
