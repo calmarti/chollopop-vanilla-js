@@ -18,7 +18,7 @@ Se asume la instalación previa de:
 
 -Node
 
--Sparrest.js:
+-Sparrest.js (simulador de backend basado en json-server)
 
 ```
 https://github.com/kasappeal/sparrest
