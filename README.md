@@ -73,10 +73,6 @@ Los elementos 'avanzar' y 'regresar' están maquetados pero su funcionalidad no 
 
 El filtro por tags o categorías fue implementado con un elemento *select* en la barra de navegación
 
-**Script de js de bootstrap**
-
-El script ```bootstrap.bundle.min.js``` está incluido pero "comentado" para evitar una posible interferencia con el código javascript de la aplicación. 
-
 **Campos vacíos al crear o editar un anuncio**
 
 La variable string con el mensaje de error al dejar varios campos vacíos no reconoce el caracter de salto de línea ```\n```. 
